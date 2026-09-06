@@ -3520,7 +3520,6 @@ html.js body {
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
     cursor: grab;
-    touch-action: pan-y;
     user-select: none;
 }
 
