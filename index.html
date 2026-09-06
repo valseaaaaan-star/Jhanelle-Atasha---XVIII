@@ -1,0 +1,1647 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#875b67">
+    <meta name="description" content="Jhanelle Atasha — XVIII">
+
+    <title>Jhanelle Atasha — XVIII</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Italianno&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <script>document.documentElement.classList.add('js');</script>
+
+    <!-- =========================================
+         FLOATING MUSIC BUTTON
+    ========================================== -->
+
+    <button class="music-button" id="music-button" aria-label="Play background music" aria-pressed="false">
+        ♫
+    </button>
+
+    <!--
+        To enable real background music: uncomment the <audio>
+        tag below and set src to your own audio file's path.
+        Left commented out so the page never requests a file
+        that doesn't exist yet.
+
+        <audio id="bg-music" loop preload="none">
+            <source src="music.mp3" type="audio/mpeg">
+        </audio>
+    -->
+    <!-- =========================================
+         HERO
+    ========================================== -->
+
+    <section class="hero">
+
+        <div class="hero-glow"></div>
+        <div class="paper-noise"></div>
+        <div class="damask" aria-hidden="true"></div>
+
+        <div class="hero-border"></div>
+        <div class="hero-border-inner"></div>
+
+        <div class="vine vine-left">
+            <span>⌁</span>
+            <span>❧</span>
+            <span>❀</span>
+        </div>
+
+        <div class="vine vine-right">
+            <span>❀</span>
+            <span>❧</span>
+            <span>⌁</span>
+        </div>
+
+        <div class="hero-stars">
+            <span>✦</span>
+            <span>·</span>
+            <span>✧</span>
+            <span>·</span>
+            <span>✦</span>
+        </div>
+
+        <div class="hero-content">
+
+            <p class="tiny-label">
+                YOU ARE CORDIALLY INVITED
+            </p>
+
+            <div class="crest crest-hero" aria-hidden="true">
+                <svg viewBox="0 0 160 160">
+                    <defs>
+                        <linearGradient id="crestGoldHero" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#8a6a3f"></stop>
+                            <stop offset="35%" stop-color="#e6cd97"></stop>
+                            <stop offset="60%" stop-color="#b08d57"></stop>
+                            <stop offset="80%" stop-color="#f3e3ba"></stop>
+                            <stop offset="100%" stop-color="#8a6a3f"></stop>
+                        </linearGradient>
+                    </defs>
+                    <circle class="crest-ring-outer" cx="80" cy="80" r="74"></circle>
+                    <circle class="crest-ring-inner" cx="80" cy="80" r="63"></circle>
+                    <path class="crest-laurel crest-laurel-left"
+                          d="M62 34 C46 44 38 60 40 78 C42 96 52 110 66 120
+                             C58 108 54 94 55 80 C56 64 61 48 62 34 Z"></path>
+                    <path class="crest-laurel crest-laurel-right"
+                          d="M98 34 C114 44 122 60 120 78 C118 96 108 110 94 120
+                             C102 108 106 94 105 80 C104 64 99 48 98 34 Z"></path>
+                    <text class="crest-cipher" x="80" y="96" text-anchor="middle"
+                          fill="url(#crestGoldHero)">JA</text>
+                    <path class="crest-flourish" d="M50 112 Q80 132 110 112"></path>
+                </svg>
+            </div>
+
+            <h1>
+                Jhanelle
+                <em>Atasha</em>
+            </h1>
+
+            <div class="hero-age">
+                <span>XVIII</span>
+            </div>
+
+            <p class="hero-date">
+                October 25, 2026 &middot; 5:00 in the evening
+            </p>
+
+            <p class="hero-host">
+                Presented with love by the Atasha family
+            </p>
+
+            <div class="crown-icon" aria-hidden="true">
+                <svg viewBox="0 0 60 34">
+                    <path d="M4 30 L4 14 L16 22 L30 6 L44 22 L56 14 L56 30 Z"></path>
+                    <circle cx="30" cy="4" r="2.6"></circle>
+                    <circle cx="4" cy="12" r="2.2"></circle>
+                    <circle cx="56" cy="12" r="2.2"></circle>
+                </svg>
+            </div>
+
+            <div class="royal-divider" aria-hidden="true">
+                <span></span>
+                <i class="gem"></i>
+                <span></span>
+            </div>
+
+            <div class="hero-countdown" id="countdown">
+                <div class="count-box">
+                    <span class="count-num" id="cd-days">00</span>
+                    <span class="count-label">DAYS</span>
+                </div>
+                <div class="count-box">
+                    <span class="count-num" id="cd-hours">00</span>
+                    <span class="count-label">HOURS</span>
+                </div>
+                <div class="count-box">
+                    <span class="count-num" id="cd-mins">00</span>
+                    <span class="count-label">MINUTES</span>
+                </div>
+                <div class="count-box">
+                    <span class="count-num" id="cd-secs">00</span>
+                    <span class="count-label">SECONDS</span>
+                </div>
+            </div>
+
+            <div class="hero-scroll">
+                <span>SCROLL TO DISCOVER</span>
+                <div class="scroll-line"></div>
+                <b>↓</b>
+            </div>
+
+        </div>
+
+        <div class="corner corner-tl">❦</div>
+        <div class="corner corner-tr">❦</div>
+        <div class="corner corner-bl">❦</div>
+        <div class="corner corner-br">❦</div>
+
+    </section>
+
+
+    <!-- =========================================
+         INTRODUCTION
+    ========================================== -->
+
+    <section class="intro seam-top" style="--seam-color:#bd8492;">
+
+        <div class="ambient-flower flower-one">❀</div>
+        <div class="ambient-flower flower-two">✿</div>
+
+        <div class="intro-flower intro-flower-left">❀</div>
+        <div class="intro-flower intro-flower-right">✿</div>
+
+        <div class="intro-inner reveal-card">
+
+            <div class="card-top-ornament">❦</div>
+
+            <p class="section-number">
+                01
+            </p>
+
+            <p class="section-label">
+                A LITTLE SOMETHING SPECIAL
+            </p>
+
+            <h2>
+                A moment<br>
+                <i>worth celebrating.</i>
+            </h2>
+
+            <div class="royal-divider royal-divider-small" aria-hidden="true">
+                <span></span>
+                <i class="gem"></i>
+                <span></span>
+            </div>
+
+            <p class="intro-copy">
+                Eighteen comes only once.
+                So let's make this one beautiful,
+                unforgettable, and filled with
+                the people who matter most.
+            </p>
+
+            <div class="signature">
+                with love,
+                <strong>Jhanelle</strong>
+            </div>
+
+            <div class="card-bottom-ornament">❦</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         ENVELOPE
+    ========================================== -->
+
+    <section class="scroll-scene">
+
+        <div class="scene-background-ornament">
+            ❦
+        </div>
+
+        <div class="scene-label">
+            <span>02</span>
+            <p>OPEN THE INVITATION</p>
+        </div>
+
+        <div class="scroll-area">
+
+            <div class="scroll-understack" aria-hidden="true"></div>
+
+            <div class="scroll" id="invite-scroll">
+
+                <div class="scroll-shadow"></div>
+
+                <div class="scroll-paper">
+
+                    <div class="scroll-paper-texture"></div>
+
+                    <div class="scroll-paper-inner">
+
+                        <span class="letter-mini">
+                            THE CELEBRATION
+                        </span>
+
+                        <strong>XVIII</strong>
+
+                        <span class="letter-line"></span>
+
+                        <small>
+                            Jhanelle Atasha
+                        </small>
+
+                        <span class="letter-flower">
+                            ❦
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="scroll-rod scroll-rod-top" aria-hidden="true"></div>
+                <div class="scroll-rod scroll-rod-bottom" aria-hidden="true"></div>
+
+                <div class="scroll-tie" aria-hidden="true">
+                    <span class="scroll-ribbon"></span>
+                    <div class="wax">
+                        <span>J</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <p class="scene-hint">
+            keep scrolling to unroll
+        </p>
+
+    </section>
+
+
+    <!-- =========================================
+         INVITATION PREVIEW
+    ========================================== -->
+
+    <section class="invitation-preview">
+
+        <div class="invitation-glow"></div>
+
+        <div class="preview-frame">
+
+            <div class="preview-inner-border"></div>
+
+            <div class="preview-corner top-left"></div>
+            <div class="preview-corner top-right"></div>
+            <div class="preview-corner bottom-left"></div>
+            <div class="preview-corner bottom-right"></div>
+
+            <div class="preview-top-flower">
+                ❦
+            </div>
+
+            <p class="preview-label">
+                THE INVITATION
+            </p>
+
+            <h2>
+                A night<br>
+                <i>to remember</i>
+            </h2>
+
+            <div class="royal-divider royal-divider-small" aria-hidden="true">
+                <span></span>
+                <i class="gem"></i>
+                <span></span>
+            </div>
+
+            <p class="preview-description">
+                Your beautifully decorated
+                invitation will be placed here.
+            </p>
+
+            <p class="preview-note">
+                Swap this frame for a photo or scan
+                of the printed invitation once it's ready.
+            </p>
+
+            <div class="preview-bottom">
+                XVIII · 2026
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         EVENT INTRO
+    ========================================== -->
+
+    <section class="event-intro seam-top" style="--seam-color:#e7c7cc;">
+
+        <div class="event-halo"></div>
+
+        <div class="event-flower">
+            ❀
+        </div>
+
+        <p class="section-label">
+            03 · THE CELEBRATION
+        </p>
+
+        <h2>
+            Join me for<br>
+            <i>an evening of magic.</i>
+        </h2>
+
+        <p class="event-copy">
+            Come dressed in your finest,
+            bring your brightest smile,
+            and let's celebrate this
+            beautiful chapter together.
+        </p>
+
+        <div class="event-agenda">
+            <span><i>❦</i> Cocktail hour</span>
+            <span><i>❦</i> Dinner &amp; toasts</span>
+            <span><i>❦</i> Dancing until late</span>
+        </div>
+
+        <div class="royal-divider" aria-hidden="true">
+            <span></span>
+            <i class="gem"></i>
+            <span></span>
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         DETAILS
+    ========================================== -->
+
+    <section class="details seam-top lace-trim" style="--seam-color:#fbf5ed;">
+
+        <div class="details-decoration">
+            ❦
+        </div>
+
+        <div class="details-header">
+
+            <p class="section-label">
+                04 · DETAILS
+            </p>
+
+            <h2>
+                Save<br>
+                <i>the date.</i>
+            </h2>
+
+        </div>
+
+        <div class="detail-grid">
+
+            <div class="detail-item">
+
+                <div class="detail-card">
+
+                    <span class="detail-icon">
+                        ♡
+                    </span>
+
+                    <small>DATE</small>
+
+                    <h3>
+                        October
+                    </h3>
+
+                    <p>
+                        25 · 2026
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="detail-item">
+
+                <div class="detail-card">
+
+                    <span class="detail-icon">
+                        ◷
+                    </span>
+
+                    <small>TIME</small>
+
+                    <h3>
+                        Evening
+                    </h3>
+
+                    <p>
+                        5:00 PM
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="detail-item">
+
+                <div class="detail-card">
+
+                    <span class="detail-icon">
+                        ♧
+                    </span>
+
+                    <small>VENUE</small>
+
+                    <h3>
+                        The Celandine
+                    </h3>
+
+                    <p>
+                        Balingasa, Quezon City
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <p class="details-footnote">
+            Onsite parking is available, and the venue
+            is a short walk from nearby hotels for
+            out-of-town guests.
+        </p>
+
+        <div class="royal-divider" aria-hidden="true">
+            <span></span>
+            <i class="gem"></i>
+            <span></span>
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         VENUE / LOCATION
+    ========================================== -->
+
+    <section class="venue seam-top lace-trim" style="--seam-color:#fbf5ed;">
+
+        <div class="venue-halo"></div>
+
+        <div class="corner corner-tl">❦</div>
+        <div class="corner corner-tr">❦</div>
+
+        <p class="section-label">
+            05 · THE VENUE
+        </p>
+
+        <h2>
+            Find your<br>
+            <i>way to me.</i>
+        </h2>
+
+        <p class="venue-copy">
+            A grand old house, dressed for the evening —
+            here is exactly where to find it.
+        </p>
+
+        <div class="royal-divider" aria-hidden="true">
+            <span></span>
+            <i class="gem"></i>
+            <span></span>
+        </div>
+
+        <div class="venue-map-frame">
+
+            <span class="venue-map-corner venue-map-corner-tl"></span>
+            <span class="venue-map-corner venue-map-corner-tr"></span>
+            <span class="venue-map-corner venue-map-corner-bl"></span>
+            <span class="venue-map-corner venue-map-corner-br"></span>
+
+            <div class="venue-compass" aria-hidden="true">
+                <svg viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="46"></circle>
+                    <circle cx="50" cy="50" r="37"></circle>
+                    <path d="M50 8 L58 46 L50 92 L42 46 Z"></path>
+                    <path d="M8 50 L46 42 L92 50 L46 58 Z"></path>
+                    <text x="50" y="19" text-anchor="middle">N</text>
+                </svg>
+            </div>
+
+            <div class="venue-map-inner">
+                <iframe
+                    class="venue-map-iframe"
+                    src="https://www.google.com/maps?q=The+Celandine+Balintawak,+Brgy.+A.+Bonifacio+Ave,+Balingasa,+Quezon+City,+Metro+Manila&output=embed"
+                    title="Map to The Celandine Balintawak"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+        </div>
+
+        <div class="venue-card">
+
+            <span class="detail-icon">♧</span>
+
+            <h3>The Celandine Balintawak</h3>
+
+            <p>
+                Brgy. A. Bonifacio Ave, Balingasa,<br>
+                Quezon City, Metro Manila
+            </p>
+
+            <a class="venue-directions"
+               href="https://www.google.com/maps/dir/?api=1&destination=The+Celandine+Balintawak%2C+Brgy.+A.+Bonifacio+Ave%2C+Balingasa%2C+Quezon+City%2C+Metro+Manila"
+               target="_blank" rel="noopener">
+                GET DIRECTIONS
+                <span>→</span>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         DRESS CODE
+    ========================================== -->
+
+    <section class="dress-code seam-top lace-trim" style="--seam-color:#f0e2c4;">
+
+        <div class="dress-pattern"></div>
+
+        <div class="corner corner-tl">❦</div>
+        <div class="corner corner-tr">❦</div>
+        <div class="corner corner-bl">❦</div>
+        <div class="corner corner-br">❦</div>
+
+        <div class="dress-inner">
+
+            <p class="section-label">
+                06 · DRESS CODE
+            </p>
+
+            <div class="dress-symbol">
+                <span class="dress-laurel dress-laurel-left">❧</span>
+                ♡
+                <span class="dress-laurel dress-laurel-right">❧</span>
+            </div>
+
+            <h2>
+                Come<br>
+                <i>beautifully dressed.</i>
+            </h2>
+
+            <p>
+                Formal · Elegant · You
+            </p>
+
+            <div class="dress-palette" aria-hidden="true">
+                <span style="background:#e7c7cc;"></span>
+                <span style="background:#c9949f;"></span>
+                <span style="background:#e6cd97;"></span>
+                <span style="background:#929b82;"></span>
+                <span style="background:#7d5560;"></span>
+            </div>
+
+            <p class="dress-note">
+                A regency-inspired palette, if it helps —
+                soft rose, sage, and gold catch the light best.
+            </p>
+
+            <div class="royal-divider royal-divider-light" aria-hidden="true">
+                <span></span>
+                <i class="gem"></i>
+                <span></span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         WISHLIST
+    ========================================== -->
+
+    <section class="wishlist seam-top lace-trim" style="--seam-color:#7d5560;">
+
+        <div class="wishlist-glow"></div>
+
+        <p class="section-label">
+            07 · THE WISHLIST
+        </p>
+
+        <h2>
+            Just in case<br>
+            <i>you're wondering.</i>
+        </h2>
+
+        <p class="wishlist-copy">
+            Your presence is truly the only gift I need —
+            but if you're looking for ideas, here's a little scroll of them.
+        </p>
+
+        <div class="royal-divider" aria-hidden="true">
+            <span></span>
+            <i class="gem"></i>
+            <span></span>
+        </div>
+
+        <div class="wishlist-scroll">
+            <svg class="wishlist-scroll-svg" viewBox="0 0 1000 260" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+                <defs>
+                    <linearGradient id="scrollPaper" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#fdf7ec"></stop>
+                        <stop offset="100%" stop-color="#f1e2c8"></stop>
+                    </linearGradient>
+                    <linearGradient id="scrollRod" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#8a6a3f"></stop>
+                        <stop offset="35%" stop-color="#e6cd97"></stop>
+                        <stop offset="60%" stop-color="#b08d57"></stop>
+                        <stop offset="80%" stop-color="#f3e3ba"></stop>
+                        <stop offset="100%" stop-color="#8a6a3f"></stop>
+                    </linearGradient>
+                </defs>
+
+                <rect x="70" y="30" width="860" height="200" fill="url(#scrollPaper)"></rect>
+                <rect x="70" y="30" width="30" height="200" fill="rgba(138,106,63,.16)"></rect>
+                <rect x="900" y="30" width="30" height="200" fill="rgba(138,106,63,.16)"></rect>
+
+                <rect x="10" y="10" width="60" height="240" rx="30" fill="url(#scrollRod)"></rect>
+                <rect x="930" y="10" width="60" height="240" rx="30" fill="url(#scrollRod)"></rect>
+
+                <circle cx="40" cy="26" r="15" fill="url(#scrollRod)"></circle>
+                <circle cx="40" cy="234" r="15" fill="url(#scrollRod)"></circle>
+                <circle cx="960" cy="26" r="15" fill="url(#scrollRod)"></circle>
+                <circle cx="960" cy="234" r="15" fill="url(#scrollRod)"></circle>
+
+                <text x="500" y="158" text-anchor="middle" class="wishlist-scroll-text">Wishlist</text>
+            </svg>
+        </div>
+
+        <div class="wishlist-items">
+
+            <div class="wishlist-item">
+                <span class="wishlist-item-icon">✦</span>
+                <p>Add your first wish here.</p>
+            </div>
+
+            <div class="wishlist-item">
+                <span class="wishlist-item-icon">✦</span>
+                <p>Add another wish here.</p>
+            </div>
+
+            <div class="wishlist-item">
+                <span class="wishlist-item-icon">✦</span>
+                <p>Add one more here.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         DEBUT BOOK — 18 ROSES / TREASURES / BILLS / CANDLES
+    ========================================== -->
+
+    <section class="debut-book seam-top lace-trim" style="--seam-color:#e7c7cc;">
+
+        <div class="book-halo" aria-hidden="true"></div>
+
+        <p class="section-label">
+            08 · THE KEEPSAKES
+        </p>
+
+        <h2>
+            Eighteen of<br>
+            <i>everything.</i>
+        </h2>
+
+        <p class="book-section-copy">
+            Four Filipino debut traditions, four pages of this
+            little keepsake book — turn through to see who's
+            been asked to be part of each one.
+        </p>
+
+        <div class="royal-divider" aria-hidden="true">
+            <span></span>
+            <i class="gem"></i>
+            <span></span>
+        </div>
+
+        <div class="book-wrap">
+
+            <div class="book" id="debut-book">
+
+                <div class="book-shadow" aria-hidden="true"></div>
+                <div class="book-spine" aria-hidden="true"></div>
+
+                <div class="book-cover" id="book-cover" role="button" tabindex="0" aria-label="Open the book of traditions">
+                    <div class="book-cover-inner">
+
+                        <div class="book-cover-front">
+                            <span class="book-cover-ornament-top">❦</span>
+
+                            <div class="book-cover-frame">
+                                <p class="book-cover-eyebrow">A KEEPSAKE OF</p>
+                                <h3 class="book-cover-title">18<sup>th</sup><br><i>Traditions</i></h3>
+                                <div class="book-cover-monogram">JA</div>
+                                <p class="book-cover-sub">Jhanelle Atasha</p>
+                            </div>
+
+                            <span class="book-cover-ornament-bottom">❦</span>
+                            <p class="book-cover-hint">tap to open</p>
+                        </div>
+
+                        <div class="book-cover-back" aria-hidden="true"></div>
+
+                    </div>
+                </div>
+
+                <div class="book-pages">
+
+                    <article class="book-page" data-index="0">
+
+                        <div class="book-page-inner">
+
+                            <div class="book-page-front">
+
+                                <div class="book-page-tab" aria-hidden="true">I</div>
+                                <div class="book-page-decor" aria-hidden="true">
+                                    <span class="decor-tl">❀</span>
+                                    <span class="decor-tr">❧</span>
+                                    <span class="decor-bl">❧</span>
+                                    <span class="decor-br">❀</span>
+                                </div>
+
+                                <span class="book-page-icon">❀</span>
+
+                                <p class="section-label book-page-label">18 ROSES</p>
+
+                                <h3>Eighteen roses,<br><i>eighteen wishes.</i></h3>
+
+                                <p class="book-page-copy">
+                                    One by one, eighteen special men waltz with me and hand me a single rose — each one a wish for my future, spoken and then tucked into a bouquet I keep.
+                                </p>
+
+                                <div class="book-slot-grid">
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">01</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">02</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">03</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">04</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">05</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">06</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">07</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">08</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">09</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">10</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">11</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">12</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">13</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">14</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">15</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">16</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">17</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">18</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="book-page-back" aria-hidden="true"></div>
+
+                        </div>
+
+                    </article>
+
+                    <article class="book-page" data-index="1">
+
+                        <div class="book-page-inner">
+
+                            <div class="book-page-front">
+
+                                <div class="book-page-tab" aria-hidden="true">II</div>
+                                <div class="book-page-decor" aria-hidden="true">
+                                    <span class="decor-tl">✦</span>
+                                    <span class="decor-tr">✧</span>
+                                    <span class="decor-bl">✧</span>
+                                    <span class="decor-br">✦</span>
+                                </div>
+
+                                <span class="book-page-icon">✦</span>
+
+                                <p class="section-label book-page-label">18 TREASURES</p>
+
+                                <h3>Eighteen treasures,<br><i>eighteen blessings.</i></h3>
+
+                                <p class="book-page-copy">
+                                    Eighteen women I love each bring a small gift chosen to represent a blessing — health, wisdom, love, prosperity — and share why they picked it.
+                                </p>
+
+                                <div class="book-slot-grid">
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">01</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">02</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">03</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">04</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">05</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">06</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">07</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">08</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">09</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">10</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">11</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">12</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">13</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">14</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">15</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">16</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">17</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">18</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="book-page-back" aria-hidden="true"></div>
+
+                        </div>
+
+                    </article>
+
+                    <article class="book-page" data-index="2">
+
+                        <div class="book-page-inner">
+
+                            <div class="book-page-front">
+
+                                <div class="book-page-tab" aria-hidden="true">III</div>
+                                <div class="book-page-decor" aria-hidden="true">
+                                    <span class="decor-tl">❖</span>
+                                    <span class="decor-tr">❖</span>
+                                    <span class="decor-bl">❖</span>
+                                    <span class="decor-br">❖</span>
+                                </div>
+
+                                <div class="book-page-icon book-page-icon-svg" aria-hidden="true">
+                                    <svg viewBox="0 0 72 46">
+                                        <rect class="peso-note" x="3" y="3" width="66" height="40" rx="5"></rect>
+                                        <rect class="peso-note-inner" x="9" y="9" width="54" height="28" rx="2"></rect>
+                                        <text class="peso-sign" x="36" y="30" text-anchor="middle">₱</text>
+                                    </svg>
+                                </div>
+
+                                <p class="section-label book-page-label">18 BLUE BILLS</p>
+
+                                <h3>Eighteen blue bills,<br><i>eighteen blessings of abundance.</i></h3>
+
+                                <p class="book-page-copy">
+                                    Eighteen sponsors each present a blue ₱1,000 bill, danced in one at a time, wishing me a future built on generosity as much as good fortune.
+                                </p>
+
+                                <div class="book-slot-grid">
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">01</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">02</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">03</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">04</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">05</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">06</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">07</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">08</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">09</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">10</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">11</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">12</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">13</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">14</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">15</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">16</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">17</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">18</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="book-page-back" aria-hidden="true"></div>
+
+                        </div>
+
+                    </article>
+
+                    <article class="book-page book-page-last" data-index="3">
+
+                        <div class="book-page-inner">
+
+                            <div class="book-page-front">
+
+                                <div class="book-page-tab" aria-hidden="true">IV</div>
+                                <div class="book-page-decor" aria-hidden="true">
+                                    <span class="decor-tl">✦</span>
+                                    <span class="decor-tr">❧</span>
+                                    <span class="decor-bl">❧</span>
+                                    <span class="decor-br">✦</span>
+                                </div>
+
+                                <div class="book-page-icon book-page-icon-svg" aria-hidden="true">
+                                    <svg viewBox="0 0 40 64">
+                                        <path class="candle-flame" d="M20 6 C25 13 27 18 20 24 C13 18 15 13 20 6 Z"></path>
+                                        <line class="candle-wick" x1="20" y1="24" x2="20" y2="18"></line>
+                                        <rect class="candle-body" x="12" y="24" width="16" height="34" rx="2"></rect>
+                                        <line class="candle-drip" x1="12" y1="32" x2="28" y2="32"></line>
+                                    </svg>
+                                </div>
+
+                                <p class="section-label book-page-label">18 CANDLES</p>
+
+                                <h3>Eighteen candles,<br><i>eighteen guiding lights.</i></h3>
+
+                                <p class="book-page-copy">
+                                    The eighteen people who've shaped me most each light a candle and offer a few words — the closing ritual of the night, and my favorite.
+                                </p>
+
+                                <div class="book-slot-grid">
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">01</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">02</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">03</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">04</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">05</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">06</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">07</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">08</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">09</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">10</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">11</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">12</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">13</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">14</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">15</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">16</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">17</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+
+                                    <div class="book-slot">
+                                        <span class="book-slot-num">18</span>
+                                        <span class="book-slot-name">Add a name</span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="book-page-back" aria-hidden="true"></div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+                <button class="book-nav book-nav-prev" id="book-prev" aria-label="Previous page" disabled>‹</button>
+                <button class="book-nav book-nav-next" id="book-next" aria-label="Next page">›</button>
+
+            </div>
+
+            <div class="book-progress" id="book-progress">
+                <span class="book-progress-dot active" data-goto="0" role="button" tabindex="0" aria-label="Go to 18 Roses"></span>
+                <span class="book-progress-dot" data-goto="1" role="button" tabindex="0" aria-label="Go to 18 Treasures"></span>
+                <span class="book-progress-dot" data-goto="2" role="button" tabindex="0" aria-label="Go to 18 Blue Bills"></span>
+                <span class="book-progress-dot" data-goto="3" role="button" tabindex="0" aria-label="Go to 18 Candles"></span>
+            </div>
+
+            <p class="book-hint">tap the book to open it, then the arrows to turn each page</p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         WISHES CAROUSEL
+    ========================================== -->
+
+    <section class="wishes lace-trim">
+
+        <div class="corner corner-soft corner-tl">❦</div>
+        <div class="corner corner-soft corner-tr">❦</div>
+
+        <div class="wishes-flower">
+            ❀
+        </div>
+
+        <p class="section-label">
+            09 · KIND WORDS
+        </p>
+
+        <h2>
+            With every<br>
+            <i>kind wish.</i>
+        </h2>
+
+        <div class="wishes-carousel" id="wishes-carousel">
+
+            <blockquote class="wish-quote active">
+                "Swap this for a favorite message from someone you love."
+                <cite>— add a name</cite>
+            </blockquote>
+
+            <blockquote class="wish-quote">
+                "A second sweet note can go here."
+                <cite>— add a name</cite>
+            </blockquote>
+
+            <blockquote class="wish-quote">
+                "And a third, if you'd like one."
+                <cite>— add a name</cite>
+            </blockquote>
+
+        </div>
+
+        <div class="wishes-dots" id="wishes-dots"></div>
+
+    </section>
+
+
+    <!-- =========================================
+         PHOTO GALLERY
+    ========================================== -->
+
+    <!-- =========================================
+         PHOTO GALLERY — PAGE ONE (RED)
+    ========================================== -->
+
+    <section class="photo-gallery photo-gallery-red seam-top lace-trim" style="--seam-color:#e7c7cc;">
+
+        <div class="damask" aria-hidden="true"></div>
+        <div class="gallery-glow"></div>
+
+        <div class="gallery-flower gallery-flower-left">❀</div>
+        <div class="gallery-flower gallery-flower-right">❀</div>
+
+        <div class="corner corner-soft corner-tl">❦</div>
+        <div class="corner corner-soft corner-tr">❦</div>
+
+        <p class="section-label">
+            10 · THE GALLERY
+        </p>
+
+        <h2>
+            Roses<br>
+            <i>&amp; candlelight.</i>
+        </h2>
+
+        <p class="gallery-copy">
+            A little drama, a little glow —
+            swap this frame for your own portrait whenever it's ready.
+        </p>
+
+        <div class="royal-divider" aria-hidden="true">
+            <span></span>
+            <i class="gem"></i>
+            <span></span>
+        </div>
+
+        <div class="gallery-wrap">
+
+            <div class="gallery-frame-track">
+
+                <figure class="gallery-slide">
+                    <div class="gallery-photo-frame">
+                        <span class="frame-corner frame-corner-tl">❦</span>
+                        <span class="frame-corner frame-corner-tr">❦</span>
+                        <span class="frame-corner frame-corner-bl">❦</span>
+                        <span class="frame-corner frame-corner-br">❦</span>
+                        <img src="images/gallery-01.jpg" alt="A portrait in a red gown, framed by roses and candlelight" draggable="false">
+                    </div>
+                    <figcaption>Roses &amp; candlelight</figcaption>
+                </figure>
+
+                <figure class="gallery-slide gallery-slide-placeholder">
+                    <div class="gallery-photo-frame gallery-photo-frame-empty">
+                        <span class="frame-corner frame-corner-tl">❦</span>
+                        <span class="frame-corner frame-corner-tr">❦</span>
+                        <span class="frame-corner frame-corner-bl">❦</span>
+                        <span class="frame-corner frame-corner-br">❦</span>
+                        <span class="frame-empty-icon">❀</span>
+                        <span class="frame-empty-label">Add a photo</span>
+                    </div>
+                    <figcaption>Swap this frame</figcaption>
+                </figure>
+
+            </div>
+
+            <button class="gallery-nav gallery-nav-prev" aria-label="Previous photo" disabled>‹</button>
+            <button class="gallery-nav gallery-nav-next" aria-label="Next photo">›</button>
+
+        </div>
+
+        <div class="gallery-dots"></div>
+
+        <p class="gallery-hint">swipe, drag, or tap the arrows to look through</p>
+
+    </section>
+
+
+    <!-- =========================================
+         PHOTO GALLERY — PAGE TWO (SOFT)
+    ========================================== -->
+
+    <section class="photo-gallery photo-gallery-soft seam-top lace-trim" style="--seam-color:#8f313b;">
+
+        <div class="gallery-glow"></div>
+
+        <div class="gallery-flower gallery-flower-left">✿</div>
+        <div class="gallery-flower gallery-flower-right">✿</div>
+
+        <div class="corner corner-soft corner-tl">❦</div>
+        <div class="corner corner-soft corner-tr">❦</div>
+
+        <p class="section-label">
+            11 · THE GALLERY
+        </p>
+
+        <h2>
+            In full<br>
+            <i>bloom.</i>
+        </h2>
+
+        <p class="gallery-copy">
+            A softer shade, just as lovely —
+            swap this frame for your own portrait whenever it's ready.
+        </p>
+
+        <div class="royal-divider" aria-hidden="true">
+            <span></span>
+            <i class="gem"></i>
+            <span></span>
+        </div>
+
+        <div class="gallery-wrap">
+
+            <div class="gallery-frame-track">
+
+                <figure class="gallery-slide">
+                    <div class="gallery-photo-frame">
+                        <span class="frame-corner frame-corner-tl">❦</span>
+                        <span class="frame-corner frame-corner-tr">❦</span>
+                        <span class="frame-corner frame-corner-bl">❦</span>
+                        <span class="frame-corner frame-corner-br">❦</span>
+                        <img src="images/gallery-02.jpg" alt="A portrait in a white gown, surrounded by a garden of flowers" draggable="false">
+                    </div>
+                    <figcaption>In full bloom</figcaption>
+                </figure>
+
+                <figure class="gallery-slide gallery-slide-placeholder">
+                    <div class="gallery-photo-frame gallery-photo-frame-empty">
+                        <span class="frame-corner frame-corner-tl">❦</span>
+                        <span class="frame-corner frame-corner-tr">❦</span>
+                        <span class="frame-corner frame-corner-bl">❦</span>
+                        <span class="frame-corner frame-corner-br">❦</span>
+                        <span class="frame-empty-icon">✿</span>
+                        <span class="frame-empty-label">Add a photo</span>
+                    </div>
+                    <figcaption>Swap this frame</figcaption>
+                </figure>
+
+            </div>
+
+            <button class="gallery-nav gallery-nav-prev" aria-label="Previous photo" disabled>‹</button>
+            <button class="gallery-nav gallery-nav-next" aria-label="Next photo">›</button>
+
+        </div>
+
+        <div class="gallery-dots"></div>
+
+        <p class="gallery-hint">swipe, drag, or tap the arrows to look through</p>
+
+    </section>
+
+
+    <!-- =========================================
+         RSVP
+    ========================================== -->
+
+    <section class="rsvp seam-top lace-trim" style="--seam-color:#f5ead0;">
+
+        <div class="corner corner-soft corner-tl">❦</div>
+        <div class="corner corner-soft corner-tr">❦</div>
+        <div class="corner corner-soft corner-bl">❦</div>
+        <div class="corner corner-soft corner-br">❦</div>
+
+        <div class="rsvp-flower">
+            ✿
+        </div>
+
+        <div class="rsvp-flower rsvp-flower-left">
+            ❀
+        </div>
+
+        <div class="rsvp-inner">
+
+            <p class="section-label">
+                12 · RSVP
+            </p>
+
+            <h2>
+                Will you<br>
+                <i>join me?</i>
+            </h2>
+
+            <p class="rsvp-copy">
+                Your presence would mean
+                more than you know.
+            </p>
+
+            <p class="rsvp-deadline">
+                Kindly respond by September 1, 2026
+            </p>
+
+            <button class="rsvp-button">
+                RSVP WITH LOVE
+                <span>→</span>
+            </button>
+
+            <p class="rsvp-contact">
+                Questions? Reach out anytime — we're happy to help.
+            </p>
+
+        </div>
+
+        <div class="rsvp-toast" id="rsvp-toast" role="status" aria-live="polite">
+            Thank you — your RSVP has been noted with love 💌
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         FINAL
+    ========================================== -->
+
+    <section class="final seam-top" style="--seam-color:#fbf5ed;">
+
+        <div class="damask" aria-hidden="true"></div>
+
+        <div class="crest crest-final" aria-hidden="true">
+            <svg viewBox="0 0 160 160">
+                <defs>
+                    <linearGradient id="crestGoldFinal" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#8a6a3f"></stop>
+                        <stop offset="35%" stop-color="#e6cd97"></stop>
+                        <stop offset="60%" stop-color="#b08d57"></stop>
+                        <stop offset="80%" stop-color="#f3e3ba"></stop>
+                        <stop offset="100%" stop-color="#8a6a3f"></stop>
+                    </linearGradient>
+                </defs>
+                <circle class="crest-ring-outer" cx="80" cy="80" r="74"></circle>
+                <circle class="crest-ring-inner" cx="80" cy="80" r="63"></circle>
+                <path class="crest-laurel crest-laurel-left"
+                      d="M62 34 C46 44 38 60 40 78 C42 96 52 110 66 120
+                         C58 108 54 94 55 80 C56 64 61 48 62 34 Z"></path>
+                <path class="crest-laurel crest-laurel-right"
+                      d="M98 34 C114 44 122 60 120 78 C118 96 108 110 94 120
+                         C102 108 106 94 105 80 C104 64 99 48 98 34 Z"></path>
+                <text class="crest-cipher" x="80" y="96" text-anchor="middle"
+                      fill="url(#crestGoldFinal)">JA</text>
+                <path class="crest-flourish" d="M50 112 Q80 132 110 112"></path>
+            </svg>
+        </div>
+
+        <div class="final-glow"></div>
+
+        <p>
+            UNTIL THEN
+        </p>
+
+        <h2>
+            With love,<br>
+            <i>Jhanelle</i>
+        </h2>
+
+        <div class="final-age">
+            XVIII
+        </div>
+
+        <p class="final-hashtag">
+            #JhanelleTurns18
+        </p>
+
+        <div class="royal-divider royal-divider-light" aria-hidden="true">
+            <span></span>
+            <i class="gem"></i>
+            <span></span>
+        </div>
+
+        <div class="final-flowers">
+            ❀　✿　❀
+        </div>
+
+        <div class="final-line"></div>
+
+    </section>
+
+
+    <script src="javascript.js"></script>
+
+</body>
+</html>
