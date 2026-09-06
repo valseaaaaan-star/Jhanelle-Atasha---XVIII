@@ -368,7 +368,7 @@ if (wishQuotes.length && wishesDotsContainer) {
     }
 
 
-    function goToNext() {
+    function goToNext(onDone) {
 
         if (animating || currentIndex >= pages.length - 1) return;
 
@@ -383,6 +383,7 @@ if (wishQuotes.length && wishesDotsContainer) {
                 currentIndex += 1;
                 layout();
                 animating = false;
+                if (onDone) onDone();
             },
             TURN_MS
         );
@@ -390,7 +391,7 @@ if (wishQuotes.length && wishesDotsContainer) {
     }
 
 
-    function goToPrev() {
+    function goToPrev(onDone) {
 
         if (animating || currentIndex <= 0) return;
 
@@ -405,6 +406,7 @@ if (wishQuotes.length && wishesDotsContainer) {
                 currentIndex -= 1;
                 layout();
                 animating = false;
+                if (onDone) onDone();
             },
             TURN_MS
         );
@@ -416,29 +418,24 @@ if (wishQuotes.length && wishesDotsContainer) {
 
         if (animating || index === currentIndex) return;
 
-        if (index > currentIndex) {
+        /* step through pages one at a time so every leaf in between
+           still visibly turns, rather than jump-cutting. Each step
+           waits for the previous flip's own completion callback
+           (rather than a second, independently-timed setTimeout)
+           so the sequence can never race ahead of or fall behind
+           the actual animation — a dropped frame or a slightly
+           delayed transitionend no longer desyncs the chain. */
+        const step = () => {
 
-            /* step through pages one at a time so every leaf in
-               between still visibly turns, rather than jump-cutting */
-            const step = () => {
-                if (currentIndex < index) {
-                    goToNext();
-                    setTimeout(step, TURN_MS);
-                }
-            };
-            step();
+            if (currentIndex < index) {
+                goToNext(step);
+            } else if (currentIndex > index) {
+                goToPrev(step);
+            }
 
-        } else {
+        };
 
-            const step = () => {
-                if (currentIndex > index) {
-                    goToPrev();
-                    setTimeout(step, TURN_MS);
-                }
-            };
-            step();
-
-        }
+        step();
 
     }
 
