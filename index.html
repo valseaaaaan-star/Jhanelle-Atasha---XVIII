@@ -32,13 +32,15 @@
     </button>
 
     <!--
-        Background music is powered by the YouTube IFrame API,
-        pointed at the chosen song. The player itself is invisible
-        (0x0) — only its audio is used. The music-button toggles
-        play/pause (i.e. "muted"/"unmuted") on this hidden player.
+        To enable real background music: uncomment the <audio>
+        tag below and set src to your own audio file's path.
+        Left commented out so the page never requests a file
+        that doesn't exist yet.
+
+        <audio id="bg-music" loop preload="none">
+            <source src="music.mp3" type="audio/mpeg">
+        </audio>
     -->
-    <div id="yt-player" style="position:absolute;width:0;height:0;overflow:hidden;top:0;left:0;"></div>
-    <script src="https://www.youtube.com/iframe_api"></script>
     <!-- =========================================
          HERO
     ========================================== -->
@@ -82,11 +84,11 @@
                 <svg viewBox="0 0 160 160">
                     <defs>
                         <linearGradient id="crestGoldHero" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#b3915f"></stop>
-                            <stop offset="35%" stop-color="#f2e4c4"></stop>
-                            <stop offset="60%" stop-color="#d9bd8e"></stop>
-                            <stop offset="80%" stop-color="#f7ecd4"></stop>
-                            <stop offset="100%" stop-color="#b3915f"></stop>
+                            <stop offset="0%" stop-color="#8a6a3f"></stop>
+                            <stop offset="35%" stop-color="#e6cd97"></stop>
+                            <stop offset="60%" stop-color="#b08d57"></stop>
+                            <stop offset="80%" stop-color="#f3e3ba"></stop>
+                            <stop offset="100%" stop-color="#8a6a3f"></stop>
                         </linearGradient>
                     </defs>
                     <circle class="crest-ring-outer" cx="80" cy="80" r="74"></circle>
@@ -174,7 +176,7 @@
          INTRODUCTION
     ========================================== -->
 
-    <section class="intro seam-top" style="--seam-color:#f3c9d4;">
+    <section class="intro seam-top" style="--seam-color:#bd8492;">
 
         <div class="ambient-flower flower-one">❀</div>
         <div class="ambient-flower flower-two">✿</div>
@@ -320,8 +322,8 @@
             </p>
 
             <h2>
-                A closer<br>
-                <i>look</i>
+                A night<br>
+                <i>to remember</i>
             </h2>
 
             <div class="royal-divider royal-divider-small" aria-hidden="true">
@@ -353,7 +355,7 @@
          EVENT INTRO
     ========================================== -->
 
-    <section class="event-intro seam-top" style="--seam-color:#fbe6ec;">
+    <section class="event-intro seam-top" style="--seam-color:#e7c7cc;">
 
         <div class="event-halo"></div>
 
@@ -588,7 +590,7 @@
          DRESS CODE
     ========================================== -->
 
-    <section class="dress-code seam-top lace-trim" style="--seam-color:#f5ead0;">
+    <section class="dress-code seam-top lace-trim" style="--seam-color:#f0e2c4;">
 
         <div class="dress-pattern"></div>
 
@@ -619,16 +621,19 @@
             </p>
 
             <div class="dress-palette" aria-hidden="true">
-                <span style="background:#fbe6ec;"></span>
-                <span style="background:#f3c9d4;"></span>
-                <span style="background:#f2e4c4;"></span>
-                <span style="background:#c3d0b8;"></span>
-                <span style="background:#c48fa0;"></span>
+                <span style="background:#D37A8A;" data-name="Old Rose"></span>
+                <span style="background:#DE9D71;" data-name="Light Bronze"></span>
+                <span style="background:#E9BF58;" data-name="Tuscan Sun"></span>
+                <span style="background:#B7D3E9;" data-name="Pale Sky"></span>
+                <span style="background:#7C831B;" data-name="Olive"></span>
+                <span style="background:#C85555;" data-name="Pomegranate"></span>
+                <span style="background:#C6A2D5;" data-name="Lilac"></span>
             </div>
 
             <p class="dress-note">
-                A regency-inspired palette, if it helps —
-                soft rose, sage, and gold catch the light best.
+                A garden-inspired palette, if it helps —
+                old rose, light bronze, Tuscan sun, pale sky,
+                olive, pomegranate, and lilac all catch the light beautifully.
             </p>
 
             <div class="royal-divider royal-divider-light" aria-hidden="true">
@@ -646,7 +651,7 @@
          WISHLIST
     ========================================== -->
 
-    <section class="wishlist seam-top lace-trim" style="--seam-color:#c48fa0;">
+    <section class="wishlist seam-top lace-trim" style="--seam-color:#7d5560;">
 
         <div class="wishlist-glow"></div>
 
@@ -674,21 +679,21 @@
             <svg class="wishlist-scroll-svg" viewBox="0 0 1000 260" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
                 <defs>
                     <linearGradient id="scrollPaper" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" stop-color="#fdf8f2"></stop>
-                        <stop offset="100%" stop-color="#f7ecdf"></stop>
+                        <stop offset="0%" stop-color="#fdf7ec"></stop>
+                        <stop offset="100%" stop-color="#f1e2c8"></stop>
                     </linearGradient>
                     <linearGradient id="scrollRod" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stop-color="#b3915f"></stop>
-                        <stop offset="35%" stop-color="#f2e4c4"></stop>
-                        <stop offset="60%" stop-color="#d9bd8e"></stop>
-                        <stop offset="80%" stop-color="#f7ecd4"></stop>
-                        <stop offset="100%" stop-color="#b3915f"></stop>
+                        <stop offset="0%" stop-color="#8a6a3f"></stop>
+                        <stop offset="35%" stop-color="#e6cd97"></stop>
+                        <stop offset="60%" stop-color="#b08d57"></stop>
+                        <stop offset="80%" stop-color="#f3e3ba"></stop>
+                        <stop offset="100%" stop-color="#8a6a3f"></stop>
                     </linearGradient>
                 </defs>
 
                 <rect x="70" y="30" width="860" height="200" fill="url(#scrollPaper)"></rect>
-                <rect x="70" y="30" width="30" height="200" fill="rgba(179,145,95,.16)"></rect>
-                <rect x="900" y="30" width="30" height="200" fill="rgba(179,145,95,.16)"></rect>
+                <rect x="70" y="30" width="30" height="200" fill="rgba(138,106,63,.16)"></rect>
+                <rect x="900" y="30" width="30" height="200" fill="rgba(138,106,63,.16)"></rect>
 
                 <rect x="10" y="10" width="60" height="240" rx="30" fill="url(#scrollRod)"></rect>
                 <rect x="930" y="10" width="60" height="240" rx="30" fill="url(#scrollRod)"></rect>
@@ -728,7 +733,7 @@
          DEBUT BOOK — 18 ROSES / TREASURES / BILLS / CANDLES
     ========================================== -->
 
-    <section class="debut-book seam-top lace-trim" style="--seam-color:#fbe6ec;">
+    <section class="debut-book seam-top lace-trim" style="--seam-color:#e7c7cc;">
 
         <div class="book-halo" aria-hidden="true"></div>
 
@@ -1368,7 +1373,7 @@
          PHOTO GALLERY — PAGE ONE (RED)
     ========================================== -->
 
-    <section class="photo-gallery photo-gallery-red seam-top lace-trim" style="--seam-color:#fbe6ec;">
+    <section class="photo-gallery photo-gallery-red seam-top lace-trim" style="--seam-color:#e7c7cc;">
 
         <div class="damask" aria-hidden="true"></div>
         <div class="gallery-glow"></div>
@@ -1426,30 +1431,6 @@
                     <figcaption>Swap this frame</figcaption>
                 </figure>
 
-                <figure class="gallery-slide gallery-slide-placeholder">
-                    <div class="gallery-photo-frame gallery-photo-frame-empty">
-                        <span class="frame-corner frame-corner-tl">❦</span>
-                        <span class="frame-corner frame-corner-tr">❦</span>
-                        <span class="frame-corner frame-corner-bl">❦</span>
-                        <span class="frame-corner frame-corner-br">❦</span>
-                        <span class="frame-empty-icon">❀</span>
-                        <span class="frame-empty-label">Add a photo</span>
-                    </div>
-                    <figcaption>Swap this frame</figcaption>
-                </figure>
-
-                <figure class="gallery-slide gallery-slide-placeholder">
-                    <div class="gallery-photo-frame gallery-photo-frame-empty">
-                        <span class="frame-corner frame-corner-tl">❦</span>
-                        <span class="frame-corner frame-corner-tr">❦</span>
-                        <span class="frame-corner frame-corner-bl">❦</span>
-                        <span class="frame-corner frame-corner-br">❦</span>
-                        <span class="frame-empty-icon">❀</span>
-                        <span class="frame-empty-label">Add a photo</span>
-                    </div>
-                    <figcaption>Swap this frame</figcaption>
-                </figure>
-
             </div>
 
             <button class="gallery-nav gallery-nav-prev" aria-label="Previous photo" disabled>‹</button>
@@ -1468,7 +1449,7 @@
          PHOTO GALLERY — PAGE TWO (SOFT)
     ========================================== -->
 
-    <section class="photo-gallery photo-gallery-soft seam-top lace-trim" style="--seam-color:#eeb6c2;">
+    <section class="photo-gallery photo-gallery-soft seam-top lace-trim" style="--seam-color:#8f313b;">
 
         <div class="gallery-glow"></div>
 
@@ -1511,30 +1492,6 @@
                         <img src="images/gallery-02.jpg" alt="A portrait in a white gown, surrounded by a garden of flowers" draggable="false">
                     </div>
                     <figcaption>In full bloom</figcaption>
-                </figure>
-
-                <figure class="gallery-slide gallery-slide-placeholder">
-                    <div class="gallery-photo-frame gallery-photo-frame-empty">
-                        <span class="frame-corner frame-corner-tl">❦</span>
-                        <span class="frame-corner frame-corner-tr">❦</span>
-                        <span class="frame-corner frame-corner-bl">❦</span>
-                        <span class="frame-corner frame-corner-br">❦</span>
-                        <span class="frame-empty-icon">✿</span>
-                        <span class="frame-empty-label">Add a photo</span>
-                    </div>
-                    <figcaption>Swap this frame</figcaption>
-                </figure>
-
-                <figure class="gallery-slide gallery-slide-placeholder">
-                    <div class="gallery-photo-frame gallery-photo-frame-empty">
-                        <span class="frame-corner frame-corner-tl">❦</span>
-                        <span class="frame-corner frame-corner-tr">❦</span>
-                        <span class="frame-corner frame-corner-bl">❦</span>
-                        <span class="frame-corner frame-corner-br">❦</span>
-                        <span class="frame-empty-icon">✿</span>
-                        <span class="frame-empty-label">Add a photo</span>
-                    </div>
-                    <figcaption>Swap this frame</figcaption>
                 </figure>
 
                 <figure class="gallery-slide gallery-slide-placeholder">
@@ -1632,11 +1589,11 @@
             <svg viewBox="0 0 160 160">
                 <defs>
                     <linearGradient id="crestGoldFinal" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stop-color="#b3915f"></stop>
-                        <stop offset="35%" stop-color="#f2e4c4"></stop>
-                        <stop offset="60%" stop-color="#d9bd8e"></stop>
-                        <stop offset="80%" stop-color="#f7ecd4"></stop>
-                        <stop offset="100%" stop-color="#b3915f"></stop>
+                        <stop offset="0%" stop-color="#8a6a3f"></stop>
+                        <stop offset="35%" stop-color="#e6cd97"></stop>
+                        <stop offset="60%" stop-color="#b08d57"></stop>
+                        <stop offset="80%" stop-color="#f3e3ba"></stop>
+                        <stop offset="100%" stop-color="#8a6a3f"></stop>
                     </linearGradient>
                 </defs>
                 <circle class="crest-ring-outer" cx="80" cy="80" r="74"></circle>
