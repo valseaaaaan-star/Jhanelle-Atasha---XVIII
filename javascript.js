@@ -301,18 +301,6 @@ if (wishQuotes.length && wishesDotsContainer) {
    place — layout() re-applies the correct stacking after
    every move so a stale z-index never lingers.
 
-   REALISM PASS: every turn now drives a --turn custom
-   property on the moving leaf across the motion (0 → 1 → 0,
-   peaking at the visual midpoint of the flip) via a small
-   requestAnimationFrame loop. style.css reads that variable
-   to rake a soft shadow across the page as it turns — the
-   same kind of shading a real sheet of paper picks up as it
-   changes angle to the light — instead of the page just
-   swinging on a flat, evenly-lit hinge. The turn itself also
-   now settles with a slight paper-like overshoot (see the
-   cubic-bezier on .book-page / .book-cover in style.css)
-   rather than stopping dead at -180deg.
-
    A front COVER sits above all of this as its own leaf
    (z-index: 999 in CSS) and opens once, independently of the
    page-turn logic below — see initBookCover().
@@ -342,37 +330,7 @@ if (wishQuotes.length && wishesDotsContainer) {
     let currentIndex = 0;
     let animating = false;
 
-    const TURN_MS = 900;
-
-
-    /* drives the --turn custom property on a turning leaf so
-       CSS can rake a soft shadow across it mid-flip, peaking
-       when the page is roughly edge-on to the viewer and
-       fading back out as it settles flat again */
-    function animateTurnShadow(pageEl, duration, onComplete) {
-
-        const start = performance.now();
-
-        function step(now) {
-
-            const elapsed = now - start;
-            const t = Math.min(elapsed / duration, 1);
-            const shade = Math.sin(t * Math.PI);
-
-            pageEl.style.setProperty("--turn", shade.toFixed(3));
-
-            if (t < 1) {
-                window.requestAnimationFrame(step);
-            } else {
-                pageEl.style.setProperty("--turn", "0");
-                if (onComplete) onComplete();
-            }
-
-        }
-
-        window.requestAnimationFrame(step);
-
-    }
+    const TURN_MS = 1000;
 
 
     function layout() {
@@ -420,11 +378,14 @@ if (wishQuotes.length && wishesDotsContainer) {
         leaving.style.zIndex = String(pages.length + 20);
         leaving.style.transform = "rotateY(-180deg)";
 
-        animateTurnShadow(leaving, TURN_MS, () => {
-            currentIndex += 1;
-            layout();
-            animating = false;
-        });
+        setTimeout(
+            () => {
+                currentIndex += 1;
+                layout();
+                animating = false;
+            },
+            TURN_MS
+        );
 
     }
 
@@ -439,11 +400,14 @@ if (wishQuotes.length && wishesDotsContainer) {
         entering.style.zIndex = String(pages.length + 20);
         entering.style.transform = "rotateY(0deg)";
 
-        animateTurnShadow(entering, TURN_MS, () => {
-            currentIndex -= 1;
-            layout();
-            animating = false;
-        });
+        setTimeout(
+            () => {
+                currentIndex -= 1;
+                layout();
+                animating = false;
+            },
+            TURN_MS
+        );
 
     }
 
@@ -520,9 +484,7 @@ if (wishQuotes.length && wishesDotsContainer) {
        top layer so it doesn't need to touch
        currentIndex/z-index bookkeeping at all;
        the roses page (index 0) is already
-       positioned underneath it. Gets the same
-       --turn shadow treatment as the inner pages
-       for a consistent, realistic paper feel.
+       positioned underneath it.
     ----------------------------------------- */
 
     const cover =
@@ -537,7 +499,6 @@ if (wishQuotes.length && wishesDotsContainer) {
         coverOpened = true;
 
         cover.classList.add("opened");
-        animateTurnShadow(cover, 1050, () => {});
 
     }
 
@@ -798,83 +759,22 @@ if (rsvpButton && rsvpToast) {
 
 
 /* =========================================
-   MUSIC BUTTON — YouTube background music
+   MUSIC BUTTON
 
-   Loads the song at https://www.youtube.com/watch?v=YR5USHu6D6U
-   through the YouTube IFrame API into the hidden 0x0 #yt-player
-   div declared in index.html (only its audio is ever used — no
-   video is shown). The floating music-button then simply
-   toggles that hidden player's play/pause state, which is what
-   makes the song "muteable and unmuteable": pressing it once
-   starts the song (unmuted, playing), pressing it again pauses
-   it (effectively muted/silent), and so on back and forth.
-
-   ytPlayer starts out null until the YouTube API script (loaded
-   in index.html) finishes and calls the global
-   onYouTubeIframeAPIReady() below — if the person clicks the
-   button before that happens, pendingPlay just remembers that
-   they wanted it playing, and the ready handler starts it as
-   soon as the player exists.
+   Previously purely decorative (an aria-label with no
+   behavior behind it). Now toggles play/pause on the
+   background <audio> element and reflects state via
+   aria-pressed. If no real track has been added yet
+   (see the TODO on the <audio> tag in index.html), it
+   still toggles state/visuals so the control isn't dead,
+   and quietly no-ops the actual playback.
 ========================================= */
-
-const YT_VIDEO_ID = "YR5USHu6D6U";
 
 const musicButton =
     document.getElementById("music-button");
 
-let ytPlayer = null;
-let musicPlaying = false;
-let pendingPlay = false;
-
-
-window.onYouTubeIframeAPIReady = function () {
-
-    ytPlayer = new YT.Player("yt-player", {
-        height: "0",
-        width: "0",
-        videoId: YT_VIDEO_ID,
-        playerVars: {
-            autoplay: 0,
-            controls: 0,
-            disablekb: 1,
-            loop: 1,
-            playlist: YT_VIDEO_ID,
-            fs: 0,
-            modestbranding: 1
-        },
-        events: {
-            onReady: () => {
-                if (pendingPlay) {
-                    ytPlayer.playVideo();
-                }
-            },
-            /* loop:1 + playlist:<same id> already loops most of the
-               time, but this is a safety net in case a browser
-               doesn't honor that combination */
-            onStateChange: event => {
-                if (event.data === YT.PlayerState.ENDED) {
-                    ytPlayer.playVideo();
-                }
-            }
-        }
-    });
-
-};
-
-
-function setMusicButtonState(isPlaying) {
-
-    musicButton.classList.toggle("is-playing", isPlaying);
-
-    musicButton.setAttribute("aria-pressed", String(isPlaying));
-
-    musicButton.setAttribute(
-        "aria-label",
-        isPlaying ? "Pause background music" : "Play background music"
-    );
-
-}
-
+const bgMusic =
+    document.getElementById("bg-music");
 
 if (musicButton) {
 
@@ -882,22 +782,35 @@ if (musicButton) {
         "click",
         () => {
 
-            musicPlaying = !musicPlaying;
-            setMusicButtonState(musicPlaying);
+            const isPlaying =
+                musicButton.classList.toggle("is-playing");
 
-            if (!ytPlayer) {
+            musicButton.setAttribute(
+                "aria-pressed",
+                String(isPlaying)
+            );
 
-                /* API/player isn't ready yet — remember the intent
-                   and let onReady() above start it once it is */
-                pendingPlay = musicPlaying;
-                return;
+            musicButton.setAttribute(
+                "aria-label",
+                isPlaying ? "Pause background music" : "Play background music"
+            );
 
-            }
+            if (bgMusic) {
 
-            if (musicPlaying) {
-                ytPlayer.playVideo();
-            } else {
-                ytPlayer.pauseVideo();
+                if (isPlaying) {
+
+                    bgMusic.play().catch(() => {
+                        /* no audio source configured yet, or the
+                           browser blocked autoplay — fail silently
+                           rather than throwing a console error */
+                    });
+
+                } else {
+
+                    bgMusic.pause();
+
+                }
+
             }
 
         }
