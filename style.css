@@ -199,10 +199,6 @@ i {
     }
 
 
-/* previously an empty div with no rule at all (dead markup —
-   it rendered nothing). Now a second, slightly deeper gold
-   frame with its own corner flourishes, so the hero reads as
-   a proper double-bordered invitation card. */
 .hero-border-inner {
     position: absolute;
     inset: 40px;
@@ -563,14 +559,6 @@ i {
 
 /* =========================================
    SCROLL SCENE
-
-   An actual scroll of parchment, rolled shut around two
-   gilded rods and tied with a ribbon + wax seal. A single
-   CSS custom property, --p, is driven by JS as the user
-   scrolls (0 = rolled shut, 1 = fully unrolled) and every
-   moving part below reads from it via calc(), so the whole
-   animation lives in one place instead of being pushed
-   through inline styles per frame.
 ========================================= */
 
 .scroll-scene {
@@ -627,9 +615,6 @@ i {
 }
 
 
-/* a second sheet of stationery peeking out from behind the
-   scroll, so the scene reads as a small stack of paper
-   goods rather than a single object floating in space */
 .scroll-understack {
     position: absolute;
     inset: 4% -4% -3% -4%;
@@ -669,9 +654,6 @@ i {
 }
 
 
-/* the parchment itself — only ever visible between the two
-   rods below, via a clip-path that grows outward from the
-   rolled-shut center as --p rises from 0 to 1 */
 .scroll-paper {
     position: absolute;
     inset: 0;
@@ -686,8 +668,6 @@ i {
     will-change: clip-path;
 }
 
-    /* a faint gold damask + curl shading, echoing the paper
-       treatment used elsewhere on the invitation */
     .scroll-paper-texture {
         position: absolute;
         inset: 0;
@@ -767,9 +747,6 @@ i {
 }
 
 
-/* rods — a pair of gilded dowels that sit shut together at
-   the vertical center when --p is 0, and travel apart to
-   the top/bottom edges as the scroll unrolls */
 .scroll-rod {
     position: absolute;
     left: -10%;
@@ -814,9 +791,6 @@ i {
 }
 
 
-/* ribbon + wax, tied around the rolled-shut center — fades
-   and loosens as the scroll opens, without needing its own
-   JS-driven opacity logic */
 .scroll-tie {
     position: absolute;
     inset: 0;
@@ -975,8 +949,6 @@ i {
     letter-spacing: 2px;
 }
 
-
-/* corners */
 
 .preview-corner {
     position: absolute;
@@ -1354,8 +1326,6 @@ i {
     height: 100%;
     display: block;
     border: 0;
-    /* a warm, aged-paper cast on the map so it reads as part
-       of the invitation rather than a plain embedded widget */
     filter: sepia(.45) saturate(1.3) hue-rotate(-8deg) contrast(1.05) brightness(1.03);
 }
 
@@ -1469,8 +1439,6 @@ i {
 }
 
 
-/* a small regency-ballroom palette strip, so "elegant" has a
-   concrete, pickable answer instead of being left abstract */
 .dress-palette {
     display: flex;
     justify-content: center;
@@ -1494,11 +1462,114 @@ i {
 }
 
 
+/* -----------------------------------------
+   MODEL SHOWCASE — a man and a woman, both
+   re-colored together by the swatch row.
+   Kept in the same croquis-line language as
+   the crest/monogram illustrations elsewhere
+   on the page (gold outfit fill on cream
+   skin), rather than a photo or clip art.
+----------------------------------------- */
+
+.model-showcase {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.model-figure {
+    width: 150px;
+    text-align: center;
+}
+
+    .model-figure svg {
+        width: 100%;
+        height: auto;
+    }
+
+    .model-figure p {
+        margin-top: 14px;
+        font-size: 12px;
+        font-style: italic;
+        letter-spacing: .5px;
+        color: var(--gold-light);
+        opacity: .85;
+    }
+
+.model-skin {
+    fill: #e8c9a8;
+}
+
+.model-hair,
+.model-hair-bun {
+    fill: #4a332f;
+}
+
+.model-outfit {
+    fill: var(--model-color, #D37A8A);
+    transition: fill .5s ease;
+}
+
+.model-outfit-shade {
+    fill: var(--model-color, #D37A8A);
+    filter: brightness(.82);
+    transition: fill .5s ease, filter .5s ease;
+}
+
+.model-shirt {
+    fill: #fbf5ed;
+}
+
+.model-trouser {
+    fill: #3e2f2a;
+}
+
+.model-swatch-row {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 34px;
+}
+
+.model-swatch {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    box-shadow: 0 0 0 1px rgba(230,205,151,.5), 0 6px 14px rgba(0,0,0,.2);
+    cursor: pointer;
+    transition: transform .25s ease, border-color .25s ease;
+}
+
+    .model-swatch:hover {
+        transform: translateY(-3px);
+    }
+
+    .model-swatch.active {
+        border-color: var(--cream);
+        transform: scale(1.15);
+    }
+
+@media (max-width: 700px) {
+
+    .model-showcase {
+        gap: 20px;
+    }
+
+    .model-figure {
+        width: 110px;
+    }
+}
+
+
 /* =========================================
    WISHLIST
-   Replaces the old "eighteen years" timeline with a single
-   wide, unrolled parchment-scroll graphic bearing the section
-   title, plus a few swappable wish tags underneath.
 ========================================= */
 
 .wishlist {
@@ -1790,9 +1861,6 @@ i {
 }
 
 
-/* elegant in-page confirmation, replacing a plain browser
-   alert() so the RSVP moment stays in the invitation's own
-   voice instead of breaking into a system dialog */
 .rsvp-toast {
     position: fixed;
     left: 50%;
@@ -1904,17 +1972,7 @@ i {
 
 /* =========================================
    SCROLL REVEAL
-
-   (single source of truth — this replaces two earlier,
-   overlapping rulesets that targeted the same elements;
-   keeping only one avoids the second silently overriding
-   the first and makes the easing/stagger easy to tune)
 ========================================= */
-
-/* Hidden-until-scroll ONLY applies once we know JS is
-   running (html.js is added by an inline script at the
-   top of <body>). Without JS, everything just shows —
-   content is never dependent on the script succeeding. */
 
 .js .intro-inner,
 .js .preview-frame,
@@ -1978,10 +2036,6 @@ i {
         transition-delay: .2s;
     }
 
-
-/* page-level entrance — a brief, single cross-fade on load
-   instead of the whole page snapping in at once. Kept short
-   and opacity-only so it never delays interaction. */
 
 html.js body {
     animation: pageEnter .9s ease both;
@@ -2249,15 +2303,7 @@ html.js body {
 
 /* =========================================================
    ROYAL EMBELLISHMENTS
-   — crest monogram, ribboned envelope, foil shimmer on
-     gold glyphs, and a reusable gem divider —
 ========================================================= */
-
-/* -----------------------------------------
-   1. FOIL SHIMMER — every gold glyph in the
-      page now catches the light instead of
-      sitting as a flat tint.
------------------------------------------ */
 
 @keyframes foilShimmer {
     0%, 100% {
@@ -2287,10 +2333,6 @@ html.js body {
     animation: foilShimmer 7s ease-in-out infinite;
 }
 
-/* SVG <text> doesn't support background-clip the way HTML
-   text does, so the crest cipher gets its gold from a real
-   SVG gradient (set inline as `fill`) and shimmers via a
-   soft pulsing glow instead. */
 @keyframes crestGlow {
     0%, 100% {
         filter: drop-shadow(0 0 3px rgba(230,205,151,.4));
@@ -2305,17 +2347,6 @@ html.js body {
     animation: crestGlow 4s ease-in-out infinite;
 }
 
-/* event-flower / wishes-flower / rsvp-flower stay a soft
-   rose (they sit on cream, not meant to read as metal) —
-   excluded above on purpose. */
-
-
-/* -----------------------------------------
-   2. REUSABLE ROYAL GEM DIVIDER
-      <div class="royal-divider">
-        <span></span><i class="gem"></i><span></span>
-      </div>
------------------------------------------ */
 
 .royal-divider {
     display: flex;
@@ -2352,7 +2383,6 @@ html.js body {
             background: rgba(255,255,255,.35);
         }
 
-/* smaller variant for tighter card layouts */
 .royal-divider-small {
     margin: 30px auto;
     width: min(220px, 60%);
@@ -2363,7 +2393,6 @@ html.js body {
         height: 9px;
     }
 
-/* variant for dark backgrounds (dress code / final section) */
 .royal-divider-light span {
     background: linear-gradient( 90deg, transparent, var(--gold-light) 45%, var(--gold-light) 55%, transparent );
     opacity: .7;
@@ -2373,11 +2402,6 @@ html.js body {
     box-shadow: 0 0 0 3px var(--rose-dark), 0 0 0 4px rgba(230,205,151,.35), 0 0 12px rgba(230,205,151,.7);
 }
 
-
-/* -----------------------------------------
-   3. CREST MONOGRAM
-      <div class="crest crest-hero"> ... </div>
------------------------------------------ */
 
 .crest {
     position: relative;
@@ -2438,10 +2462,6 @@ html.js body {
     }
 
 
-/* -----------------------------------------
-   MOBILE — royal embellishments
------------------------------------------ */
-
 @media (max-width: 700px) {
 
     .crest {
@@ -2465,12 +2485,7 @@ html.js body {
 
 
 /* =========================================================
-   DEBUT BOOK — 18 Roses / Treasures / Blue Bills / Candles
-   A four-page keepsake book with a real page-turn: each
-   page is a two-sided leaf (front + back) that rotates
-   around its spine edge, built with the same paper-and-gold
-   language as the rest of the invitation rather than a
-   generic carousel or slider.
+   DEBUT BOOK
 ========================================================= */
 
 .debut-book {
@@ -2517,10 +2532,6 @@ html.js body {
     margin-top: 20px;
 }
 
-/* -----------------------------------------
-   BOOK SHELL
------------------------------------------ */
-
 .book {
     position: relative;
     width: min(560px, 92vw);
@@ -2566,10 +2577,6 @@ html.js body {
     position: absolute;
     inset: 0;
 }
-
-/* -----------------------------------------
-   EACH PAGE / LEAF
------------------------------------------ */
 
 .book-page {
     display: block;
@@ -2622,8 +2629,6 @@ html.js body {
     overflow: hidden;
 }
 
-    /* a faint fore-edge shadow along the spine side, echoing
-       real paper curving slightly away from the binding */
     .book-page-front::before {
         content: "";
         position: absolute;
@@ -2658,10 +2663,6 @@ html.js body {
     font-size: 40px;
     color: rgba(176,141,87,.3);
 }
-
-/* pages already turned settle to the back of the stack;
-   pages not yet reached stack in order beneath the active
-   one. z-index is (re)assigned by JS on every page change. */
 
 .book-page-icon {
     color: var(--gold-dark);
@@ -2743,10 +2744,6 @@ html.js body {
     line-height: 1.6;
 }
 
-/* -----------------------------------------
-   18-SLOT GRID
------------------------------------------ */
-
 .book-slot-grid {
     width: 100%;
     max-width: 400px;
@@ -2788,10 +2785,6 @@ html.js body {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-
-/* -----------------------------------------
-   NAV ARROWS + PROGRESS DOTS
------------------------------------------ */
 
 .book-nav {
     position: absolute;
@@ -2862,10 +2855,6 @@ html.js body {
 }
 
 
-/* -----------------------------------------
-   MOBILE — debut book
------------------------------------------ */
-
 @media (max-width: 700px) {
 
     .debut-book {
@@ -2905,18 +2894,7 @@ html.js body {
 
 /* =========================================================
    V2 — MORE BRIDGERTON, SMOOTHER REVEALS
-   (kept as a distinct layer so it's easy to tune or remove)
 ========================================================= */
-
-/* -----------------------------------------
-   1. SEAM BLENDING — softens the hard color
-      cut where one section's background meets
-      the next, so scrolling reads as one
-      continuous fade rather than a stack of
-      flat-colored pages. Each section that
-      needs it sets --seam-color inline to the
-      tone it's arriving from.
------------------------------------------ */
 
 .seam-top {
     position: relative;
@@ -2936,13 +2914,6 @@ html.js body {
     }
 
 
-/* -----------------------------------------
-   2. LACE / PEARL TRIM — a thin row of gold
-      dots along the top of a few sections,
-      echoing a lace or pearl trim rather than
-      a hard rule.
------------------------------------------ */
-
 .lace-trim::after {
     content: "";
     position: absolute;
@@ -2957,13 +2928,6 @@ html.js body {
     opacity: .55;
 }
 
-
-/* -----------------------------------------
-   3. SECTION SEALS — a small gold medallion
-      dot before each numbered section label,
-      standing in for a wax-seal mark rather
-      than a plain text eyebrow.
------------------------------------------ */
 
 .section-label {
     display: inline-flex;
@@ -2982,13 +2946,6 @@ html.js body {
     }
 
 
-/* -----------------------------------------
-   4. DROP CAP on the introduction copy —
-      a small hand-lettered flourish on the
-      opening line, in keeping with a formal
-      written invitation.
------------------------------------------ */
-
 .intro-copy::first-letter {
     float: left;
     font-family: "Italianno", cursive;
@@ -2999,13 +2956,6 @@ html.js body {
 }
 
 
-/* -----------------------------------------
-   5. SOFT CORNER VARIANT — the existing gold
-      corner flourish, recolored (no shimmer)
-      for use on pale backgrounds where the
-      full-strength foil glow would be too loud.
------------------------------------------ */
-
 .corner-soft {
     background: none;
     -webkit-background-clip: initial;
@@ -3015,13 +2965,6 @@ html.js body {
     filter: none;
 }
 
-
-/* -----------------------------------------
-   6. LAUREL ACCENTS beside the dress-code
-      emblem, and a small crown motif under
-      the hero date — both reuse the existing
-      gold-light palette, no new colors.
------------------------------------------ */
 
 .dress-laurel {
     display: inline-block;
@@ -3057,13 +3000,6 @@ html.js body {
     }
 
 
-/* -----------------------------------------
-   7. DAMASK TEXTURE — a faint diamond trellis
-      for the two "portrait" moments (hero and
-      final), evoking regency wallpaper without
-      adding any new imagery to load.
------------------------------------------ */
-
 .damask {
     position: absolute;
     inset: 0;
@@ -3073,10 +3009,6 @@ html.js body {
     background-image: repeating-linear-gradient( 45deg, rgba(230,205,151,.7) 0 1px, transparent 1px 34px ), repeating-linear-gradient( -45deg, rgba(230,205,151,.7) 0 1px, transparent 1px 34px );
 }
 
-
-/* -----------------------------------------
-   MOBILE — v2 tuning
------------------------------------------ */
 
 @media (max-width: 700px) {
 
@@ -3098,18 +3030,7 @@ html.js body {
 
 /* =========================================================
    BOOK COVER + PAGE DECORATIONS
-   The debut book now opens like a real book: a front cover
-   sits on top of the 4 tradition leaves and swings open on
-   tap/click using the same rotateY leaf mechanic already
-   built for turning pages. Each inner page also gets a
-   ribbon-style numeral tab and scattered corner ornaments so
-   every page feels individually decorated, not just the set
-   as a whole.
 ========================================================= */
-
-/* -----------------------------------------
-   COVER
------------------------------------------ */
 
 .book-cover {
     position: relative;
@@ -3286,16 +3207,9 @@ html.js body {
     color: rgba(176,141,87,.3);
 }
 
-/* -----------------------------------------
-   PER-PAGE DECORATIONS — a ribbon numeral tab
-   plus four scattered corner glyphs on every
-   inner page, so each one reads as its own
-   decorated leaf rather than a repeated shell.
------------------------------------------ */
-
 .book-page-front {
     position: relative;
-    overflow: visible; /* was hidden — the tab needs to sit above the card edge */
+    overflow: visible;
 }
 
 .book-page-tab {
@@ -3352,10 +3266,6 @@ html.js body {
     }
 
 
-/* -----------------------------------------
-   MOBILE — cover + page decor
------------------------------------------ */
-
 @media (max-width: 700px) {
 
     .book-cover-front {
@@ -3386,13 +3296,7 @@ html.js body {
 
 
 /* =========================================================
-   PHOTO GALLERY — two full pages, each built around one
-   reference portrait: a candlelit rose-red vanity scene, and
-   a soft flower-garden scene built around an antique oval
-   hand mirror. Rather than one section crossfading between
-   moods, each photo now gets its own fully themed page (dark
-   reddish/black for the first, light pastel for the second)
-   with a larger frame that echoes that antique oval mirror.
+   PHOTO GALLERY
 ========================================================= */
 
 .photo-gallery {
@@ -3699,10 +3603,6 @@ html.js body {
     opacity: .7;
 }
 
-
-/* -----------------------------------------
-   MOBILE — photo gallery
------------------------------------------ */
 
 @media (max-width: 700px) {
 
