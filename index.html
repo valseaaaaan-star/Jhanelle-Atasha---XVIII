@@ -648,35 +648,141 @@
             <div class="model-showcase" id="model-showcase">
 
                 <div class="model-figure model-figure-woman">
-                    <svg viewBox="0 0 200 460" aria-hidden="true">
-                        <ellipse class="model-skin" cx="100" cy="46" rx="26" ry="30"></ellipse>
-                        <path class="model-hair" d="M74 34 C74 12 126 12 126 34 C126 20 118 8 100 8 C82 8 74 20 74 34 Z"></path>
-                        <circle class="model-hair-bun" cx="100" cy="14" r="10"></circle>
-                        <rect class="model-skin" x="93" y="70" width="14" height="20"></rect>
-                        <path class="model-outfit" d="M62 96 C62 84 78 76 100 76 C122 76 138 84 138 96
-                                 L150 440 L50 440 Z"></path>
-                        <path class="model-outfit-shade" d="M100 76 C122 76 138 84 138 96 L150 440 L118 440
-                                 C118 300 108 180 100 76 Z"></path>
-                        <path class="model-skin" d="M62 100 C50 130 46 170 52 206 L64 200
-                                 C58 168 62 132 72 104 Z"></path>
-                        <path class="model-skin" d="M138 100 C150 130 154 170 148 206 L136 200
-                                 C142 168 138 132 128 104 Z"></path>
+                    <svg viewBox="0 0 220 600" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="skinGradW" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#f5ddc2"></stop>
+                                <stop offset="100%" stop-color="#e0b98c"></stop>
+                            </linearGradient>
+                            <linearGradient id="hairGradW" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#6b4a3a"></stop>
+                                <stop offset="100%" stop-color="#3c2a22"></stop>
+                            </linearGradient>
+                        </defs>
+
+                        <!-- soft ground shadow -->
+                        <ellipse class="model-groundshadow" cx="108" cy="590" rx="46" ry="7"></ellipse>
+
+                        <!-- hair, back layer -->
+                        <path class="model-hair" fill="url(#hairGradW)"
+                              d="M80 44 C78 16 142 16 140 44 C144 58 142 76 134 90
+                                 L126 84 C132 68 132 50 124 36 C116 24 104 24 96 36
+                                 C88 50 88 68 94 84 L86 90 C78 76 76 58 80 44 Z"></path>
+
+                        <!-- head -->
+                        <ellipse class="model-skin" fill="url(#skinGradW)" cx="110" cy="54" rx="25" ry="29"></ellipse>
+
+                        <!-- low side bun -->
+                        <circle class="model-hair" fill="url(#hairGradW)" cx="146" cy="76" r="12"></circle>
+
+                        <!-- hair front sweep over brow -->
+                        <path class="model-hair" fill="url(#hairGradW)"
+                              d="M86 40 C90 26 130 26 134 40 C126 34 116 30 110 30 C104 30 94 34 86 40 Z"></path>
+
+                        <!-- neck -->
+                        <rect class="model-skin" fill="url(#skinGradW)" x="100" y="80" width="20" height="24" rx="5"></rect>
+
+                        <!-- left arm (relaxed, contrapposto) -->
+                        <path class="model-skin" fill="url(#skinGradW)"
+                              d="M76 112 C60 132 51 166 54 202 C55 216 61 228 71 236
+                                 L82 228 C74 218 70 206 68 192 C66 164 70 138 82 118 Z"></path>
+
+                        <!-- right arm, hand resting near waist -->
+                        <path class="model-skin" fill="url(#skinGradW)"
+                              d="M144 112 C160 122 170 140 172 160 C173 174 168 186 157 192
+                                 L149 181 C157 175 161 165 159 154 C157 140 150 126 138 116 Z"></path>
+
+                        <!-- gown silhouette -->
+                        <path class="model-outfit"
+                              d="M74 110 C74 94 90 84 110 84 C130 84 146 94 146 110
+                                 L158 236 C170 266 176 330 172 392
+                                 C168 470 158 546 151 594
+                                 L145 592 C140 480 133 380 124 296
+                                 C121 258 117 228 114 202
+                                 L106 202 C103 228 99 258 96 296
+                                 C87 380 80 480 75 592
+                                 L69 594 C62 546 52 470 48 392
+                                 C44 330 50 266 62 236 Z"></path>
+
+                        <!-- fold lines -->
+                        <path class="model-fold" d="M92 236 C87 330 82 440 77 566"></path>
+                        <path class="model-fold" d="M106 240 C104 336 101 448 96 580"></path>
+                        <path class="model-fold" d="M124 240 C127 336 131 448 137 580"></path>
+                        <path class="model-fold" d="M140 236 C147 330 154 440 161 566"></path>
+
+                        <!-- waist shadow -->
+                        <path class="model-shade"
+                              d="M96 190 C100 200 120 200 124 190 L124 210 C120 218 100 218 96 210 Z"></path>
+
+                        <!-- silk sheen -->
+                        <path class="model-sheen"
+                              d="M100 96 C104 150 108 220 105 292 L114 292 C118 220 116 150 112 96 Z"></path>
                     </svg>
                     <p>Old rose &middot; example gown</p>
                 </div>
 
                 <div class="model-figure model-figure-man">
-                    <svg viewBox="0 0 200 460" aria-hidden="true">
-                        <ellipse class="model-skin" cx="100" cy="46" rx="24" ry="28"></ellipse>
-                        <path class="model-hair" d="M76 32 C76 14 124 14 124 32 C124 24 116 18 100 18 C84 18 76 24 76 32 Z"></path>
-                        <rect class="model-skin" x="92" y="68" width="16" height="18"></rect>
-                        <path class="model-shirt" d="M64 92 C64 82 80 74 100 74 C120 74 136 82 136 92
-                                 L140 210 L60 210 Z"></path>
-                        <path class="model-outfit" d="M60 210 L140 210 L150 440 L50 440 Z"></path>
-                        <path class="model-outfit-shade" d="M100 210 L140 210 L150 440 L118 440
-                                 C118 350 110 270 100 210 Z"></path>
-                        <path class="model-trouser" d="M64 300 L96 300 L92 440 L58 440 Z"></path>
-                        <path class="model-trouser" d="M104 300 L136 300 L142 440 L108 440 Z"></path>
+                    <svg viewBox="0 0 220 600" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="skinGradM" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#eccca6"></stop>
+                                <stop offset="100%" stop-color="#d3a877"></stop>
+                            </linearGradient>
+                            <linearGradient id="hairGradM" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#4a3527"></stop>
+                                <stop offset="100%" stop-color="#2b1d15"></stop>
+                            </linearGradient>
+                        </defs>
+
+                        <ellipse class="model-groundshadow" cx="110" cy="590" rx="48" ry="7"></ellipse>
+
+                        <!-- hair -->
+                        <path class="model-hair" fill="url(#hairGradM)"
+                              d="M84 36 C84 12 136 12 136 36 C136 24 128 16 110 16
+                                 C92 16 84 24 84 36 Z"></path>
+
+                        <!-- head -->
+                        <ellipse class="model-skin" fill="url(#skinGradM)" cx="110" cy="50" rx="23" ry="27"></ellipse>
+
+                        <!-- neck -->
+                        <rect class="model-skin" fill="url(#skinGradM)" x="98" y="74" width="24" height="22" rx="5"></rect>
+
+                        <!-- shirt collar peeking under jacket -->
+                        <path class="model-shirt"
+                              d="M90 92 L110 116 L130 92 L130 84 C130 80 120 76 110 76
+                                 C100 76 90 80 90 84 Z"></path>
+
+                        <!-- jacket body -->
+                        <path class="model-outfit"
+                              d="M78 98 C78 84 94 76 110 76 C126 76 142 84 142 98
+                                 L152 232 C160 262 162 302 158 342
+                                 L150 342 C150 302 146 264 140 234
+                                 L130 234 L134 342 L86 342 L90 234
+                                 L80 234 C74 264 70 302 70 342
+                                 L62 342 C58 302 60 262 68 232 Z"></path>
+
+                        <!-- lapels -->
+                        <path class="model-shade" d="M96 88 L110 118 L102 130 L84 94 Z"></path>
+                        <path class="model-shade" d="M124 88 L110 118 L118 130 L136 94 Z"></path>
+
+                        <!-- button placket -->
+                        <path class="model-crease" d="M110 132 L110 226"></path>
+
+                        <!-- jacket fold shadows -->
+                        <path class="model-fold" d="M84 150 C80 180 80 208 84 232"></path>
+                        <path class="model-fold" d="M136 150 C140 180 140 208 136 232"></path>
+
+                        <!-- trousers -->
+                        <path class="model-trouser" d="M90 342 L108 342 L103 578 L82 578 Z"></path>
+                        <path class="model-trouser" d="M112 342 L130 342 L138 578 L117 578 Z"></path>
+
+                        <!-- trouser creases -->
+                        <path class="model-crease" d="M96 350 L92 572"></path>
+                        <path class="model-crease" d="M124 350 L128 572"></path>
+
+                        <!-- shoes -->
+                        <ellipse class="model-shoe" cx="90" cy="583" rx="15" ry="7"></ellipse>
+                        <ellipse class="model-shoe" cx="130" cy="583" rx="15" ry="7"></ellipse>
                     </svg>
                     <p>Old rose &middot; example suiting</p>
                 </div>
