@@ -154,6 +154,19 @@ i {
 }
 
 
+/* Hidden YouTube player powering the music button — kept
+   at 1x1px rather than display:none, since some browsers
+   pause/throttle iframes that are fully removed from layout. */
+.yt-player-hidden {
+    position: fixed;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+
 /* =========================================
    HERO
 ========================================= */
