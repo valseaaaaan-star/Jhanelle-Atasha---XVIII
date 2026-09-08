@@ -664,14 +664,66 @@ if (rsvpButton && rsvpToast) {
 
 
 /* =========================================
-   MUSIC BUTTON
+   MUSIC BUTTON — YouTube-powered
+
+   The button controls a hidden YouTube IFrame
+   player (see #yt-player in the HTML and the
+   .yt-player-hidden rule in the CSS) instead
+   of a local <audio> element, since the source
+   is a YouTube video rather than a hosted file.
+   Swap YT_VIDEO_ID below for a different video
+   any time.
 ========================================= */
+
+const YT_VIDEO_ID = "YR5USHu6D6U";
 
 const musicButton =
     document.getElementById("music-button");
 
-const bgMusic =
-    document.getElementById("bg-music");
+let ytPlayer = null;
+let ytReady = false;
+let wantsToPlay = false;
+
+function onYouTubeIframeAPIReady() {
+
+    ytPlayer = new YT.Player("yt-player", {
+        height: "1",
+        width: "1",
+        videoId: YT_VIDEO_ID,
+        playerVars: {
+            autoplay: 0,
+            controls: 0,
+            disablekb: 1,
+            fs: 0,
+            modestbranding: 1,
+            playsinline: 1,
+            loop: 1,
+            playlist: YT_VIDEO_ID // required for a single video to loop
+        },
+        events: {
+            onReady: () => {
+
+                ytReady = true;
+
+                if (wantsToPlay) ytPlayer.playVideo();
+
+            },
+            onStateChange: event => {
+
+                if (event.data === YT.PlayerState.ENDED) {
+                    ytPlayer.seekTo(0);
+                    ytPlayer.playVideo();
+                }
+
+            }
+        }
+    });
+
+}
+
+// Exposed globally — the YouTube IFrame API script
+// (loaded in the HTML) calls this once it's ready.
+window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
 
 if (musicButton) {
 
@@ -692,18 +744,17 @@ if (musicButton) {
                 isPlaying ? "Pause background music" : "Play background music"
             );
 
-            if (bgMusic) {
+            wantsToPlay = isPlaying;
 
-                if (isPlaying) {
+            if (!ytReady || !ytPlayer) return;
 
-                    bgMusic.play().catch(() => {
-                    });
+            if (isPlaying) {
 
-                } else {
+                ytPlayer.playVideo();
 
-                    bgMusic.pause();
+            } else {
 
-                }
+                ytPlayer.pauseVideo();
 
             }
 
