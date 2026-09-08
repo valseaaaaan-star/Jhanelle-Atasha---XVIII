@@ -31,16 +31,9 @@
         ♫
     </button>
 
-    <!--
-        To enable real background music: uncomment the <audio>
-        tag below and set src to your own audio file's path.
-        Left commented out so the page never requests a file
-        that doesn't exist yet.
+    <!-- Hidden YouTube player powering the music button -->
+    <div id="yt-player" class="yt-player-hidden"></div>
 
-        <audio id="bg-music" loop preload="none">
-            <source src="music.mp3" type="audio/mpeg">
-        </audio>
-    -->
     <!-- =========================================
          HERO
     ========================================== -->
@@ -1877,6 +1870,7 @@
     </section>
 
 
+    <script src="https://www.youtube.com/iframe_api"></script>
     <script src="javascript.js"></script>
 
 </body>
