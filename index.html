@@ -1785,10 +1785,52 @@
                 Kindly respond by September 1, 2026
             </p>
 
-            <button class="rsvp-button">
-                RSVP WITH LOVE
-                <span>→</span>
-            </button>
+            <form class="rsvp-form" id="rsvp-form" novalidate>
+
+                <div class="rsvp-field">
+                    <label for="rsvp-name">Full name</label>
+                    <input type="text" id="rsvp-name" name="name" placeholder="Your full name" required autocomplete="name">
+                </div>
+
+                <div class="rsvp-field">
+                    <label for="rsvp-guests">Number attending</label>
+                    <select id="rsvp-guests" name="guests" required>
+                        <option value="" disabled selected>Select a number</option>
+                        <option value="1">Just me (1)</option>
+                        <option value="2">2 guests</option>
+                        <option value="3">3 guests</option>
+                        <option value="4">4 guests</option>
+                        <option value="5+">5 or more</option>
+                    </select>
+                </div>
+
+                <fieldset class="rsvp-field rsvp-field-radio">
+                    <legend>Will you be joining us?</legend>
+                    <div class="rsvp-radio-group">
+                        <label class="rsvp-radio">
+                            <input type="radio" name="attending" value="Joyfully accepts" checked>
+                            <span>Joyfully accepts</span>
+                        </label>
+                        <label class="rsvp-radio">
+                            <input type="radio" name="attending" value="Regretfully declines">
+                            <span>Regretfully declines</span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <div class="rsvp-field">
+                    <label for="rsvp-message">A note for Jhanelle (optional)</label>
+                    <textarea id="rsvp-message" name="message" rows="3" placeholder="Leave a little message..."></textarea>
+                </div>
+
+                <button type="submit" class="rsvp-button" id="rsvp-submit">
+                    <span class="rsvp-button-label">SEND RSVP</span>
+                    <span>→</span>
+                </button>
+
+                <p class="rsvp-form-status" id="rsvp-form-status" role="status" aria-live="polite"></p>
+
+            </form>
 
             <p class="rsvp-contact">
                 Questions? Reach out anytime — we're happy to help.
