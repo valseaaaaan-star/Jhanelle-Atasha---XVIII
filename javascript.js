@@ -628,37 +628,141 @@ document.querySelectorAll(".gallery-wrap").forEach(initGallery);
 
 
 /* =========================================
-   RSVP BUTTON
+   RSVP FORM
+
+   Submits to Formspree (https://formspree.io) so real
+   responses land in your inbox / dashboard without needing
+   your own server. To go live:
+
+     1. Create a free account at formspree.io
+     2. Create a new form and copy its endpoint, which looks
+        like: https://formspree.io/f/xxxxaaaa
+     3. Paste that endpoint into RSVP_ENDPOINT below.
+
+   Until you do that, submissions will fail gracefully and
+   show a friendly error asking the guest to try again —
+   nothing is silently lost, but nothing is silently
+   "succeeding" either without a real endpoint in place.
 ========================================= */
 
-const rsvpButton =
-    document.querySelector(".rsvp-button");
+const RSVP_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+
+const rsvpForm =
+    document.getElementById("rsvp-form");
 
 const rsvpToast =
     document.getElementById("rsvp-toast");
 
+const rsvpStatus =
+    document.getElementById("rsvp-form-status");
 
-if (rsvpButton && rsvpToast) {
+const rsvpSubmitButton =
+    document.getElementById("rsvp-submit");
 
-    let toastTimer = null;
 
-    rsvpButton.addEventListener(
-        "click",
+function showRsvpToast() {
+
+    if (!rsvpToast) return;
+
+    rsvpToast.classList.add("visible");
+
+    setTimeout(
         () => {
+            rsvpToast.classList.remove("visible");
+        },
+        3600
+    );
 
-            rsvpToast.classList.add("visible");
+}
 
-            if (toastTimer) clearTimeout(toastTimer);
 
-            toastTimer = setTimeout(
-                () => {
-                    rsvpToast.classList.remove("visible");
-                },
-                3600
+function setRsvpStatus(message, type) {
+
+    if (!rsvpStatus) return;
+
+    rsvpStatus.textContent = message;
+    rsvpStatus.classList.remove("is-success", "is-error");
+
+    if (type) rsvpStatus.classList.add(`is-${type}`);
+
+}
+
+
+function setRsvpLoading(isLoading) {
+
+    if (!rsvpSubmitButton) return;
+
+    rsvpSubmitButton.disabled = isLoading;
+    rsvpSubmitButton.classList.toggle("is-loading", isLoading);
+
+}
+
+
+if (rsvpForm) {
+
+    rsvpForm.addEventListener("submit", async event => {
+
+        event.preventDefault();
+
+        if (!rsvpForm.reportValidity()) return;
+
+        if (RSVP_ENDPOINT.includes("https://formspree.io/f/mzebkqgb")) {
+
+            setRsvpStatus(
+                "RSVPs aren't connected yet — add your Formspree endpoint in javascript.js.",
+                "error"
             );
 
+            return;
+
         }
-    );
+
+        setRsvpLoading(true);
+        setRsvpStatus("Sending your RSVP…");
+
+        const formData = new FormData(rsvpForm);
+
+        try {
+
+            const response = await fetch(RSVP_ENDPOINT, {
+                method: "POST",
+                body: formData,
+                headers: { Accept: "application/json" }
+            });
+
+            if (response.ok) {
+
+                setRsvpStatus(
+                    "Thank you — your RSVP has been sent with love.",
+                    "success"
+                );
+
+                showRsvpToast();
+                rsvpForm.reset();
+
+            } else {
+
+                setRsvpStatus(
+                    "Something went wrong sending your RSVP. Please try again.",
+                    "error"
+                );
+
+            }
+
+        } catch (error) {
+
+            setRsvpStatus(
+                "Could not reach the server. Please check your connection and try again.",
+                "error"
+            );
+
+        } finally {
+
+            setRsvpLoading(false);
+
+        }
+
+    });
 
 }
 
