@@ -3594,7 +3594,7 @@ html.js body {
 .gallery-wrap {
     position: relative;
     z-index: 1;
-    width: min(860px, 96vw);
+    width: min(1040px, 97vw);
     margin: 30px auto 0;
 }
 
@@ -3625,7 +3625,7 @@ html.js body {
 
 .gallery-photo-frame {
     position: relative;
-    width: min(600px, 92vw);
+    width: min(760px, 94vw);
     aspect-ratio: 3 / 2;
     margin: 0 auto;
     border-radius: 50% 50% 6% 6%;
