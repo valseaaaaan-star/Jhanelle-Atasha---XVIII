@@ -3145,6 +3145,11 @@ html.js body {
     filter: none;
 }
 
+.photo-gallery-soft .frame-corner {
+    color: var(--rose-dark);
+    opacity: .6;
+}
+
 
 .dress-laurel {
     display: inline-block;
