@@ -180,10 +180,11 @@ i {
     text-align: center;
     overflow: hidden;
     color: var(--cream);
-    background: radial-gradient( ellipse at center, rgba(255,240,215,.22), transparent 55% ), linear-gradient( 140deg, #d7a5b0, #bd8492 );
+    background:
+        radial-gradient( ellipse at center, rgba(255,240,215,.22), transparent 55% ),
+        linear-gradient( 140deg, rgba(215,165,176,.55), rgba(189,132,146,.72) ),
+        url("enhanced-255.jpg") center 22% / cover no-repeat;
 }
-
-
 .hero-glow {
     position: absolute;
     top: 50%;
