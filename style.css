@@ -3503,15 +3503,16 @@ html.js body {
     overflow: hidden;
 }
 
-.photo-gallery-red .gallery-glow {
-    background: radial-gradient( circle, rgba(230,150,90,.35), transparent 65% );
+.photo-gallery-soft .gallery-glow {
+    background: radial-gradient( circle, rgba(240,180,150,.28), transparent 65% );
 }
     color: var(--cream);
 }
 
 .photo-gallery-soft {
-    background: linear-gradient( 165deg, #fdf7f2 0%, #f8eaed 32%, #efdfd3 64%, #f5ead0 100% );
+    background: linear-gradient( 165deg, #fdf3ee 0%, #f9dfe4 30%, #f6d3c8 60%, #fbe4b8 100% );
     color: var(--ink);
+}
 }
 
     .photo-gallery-soft .gallery-copy,
@@ -3574,8 +3575,9 @@ html.js body {
 }
 
 .photo-gallery-soft .gallery-flower {
-    color: var(--rose-dark);
-    opacity: .12;
+    color: #e3a1ab;
+    opacity: .16;
+}
 }
 
 .gallery-glow {
