@@ -724,7 +724,7 @@ if (rsvpForm) {
 
         try {
 
-            const response = await fetch(RSVP_ENDPOINT, {
+          const response = await fetch("https://formspree.io/f/mzebkqgb", {
                 method: "POST",
                 body: formData,
                 headers: { Accept: "application/json" }
