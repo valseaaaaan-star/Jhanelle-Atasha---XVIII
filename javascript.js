@@ -645,7 +645,7 @@ document.querySelectorAll(".gallery-wrap").forEach(initGallery);
    "succeeding" either without a real endpoint in place.
 ========================================= */
 
-const RSVP_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+const RSVP_ENDPOINT = "https://formspree.io/f/mzebkqgb";
 
 const rsvpForm =
     document.getElementById("rsvp-form");
