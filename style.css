@@ -3503,8 +3503,9 @@ html.js body {
     overflow: hidden;
 }
 
-.photo-gallery-red {
-    background: linear-gradient( 165deg, #0c0507 0%, #2b0f14 30%, #591b23 62%, #8f313b 100% );
+.photo-gallery-red .gallery-glow {
+    background: radial-gradient( circle, rgba(230,150,90,.35), transparent 65% );
+}
     color: var(--cream);
 }
 
