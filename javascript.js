@@ -706,17 +706,6 @@ if (rsvpForm) {
 
         if (!rsvpForm.reportValidity()) return;
 
-        if (RSVP_ENDPOINT.includes("https://formspree.io/f/mzebkqgb")) {
-
-            setRsvpStatus(
-                "RSVPs aren't connected yet — add your Formspree endpoint in javascript.js.",
-                "error"
-            );
-
-            return;
-
-        }
-
         setRsvpLoading(true);
         setRsvpStatus("Sending your RSVP…");
 
@@ -724,7 +713,7 @@ if (rsvpForm) {
 
         try {
 
-          const response = await fetch("https://formspree.io/f/mzebkqgb", {
+            const response = await fetch(RSVP_ENDPOINT, {
                 method: "POST",
                 body: formData,
                 headers: { Accept: "application/json" }
