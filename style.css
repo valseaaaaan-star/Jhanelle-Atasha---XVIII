@@ -2110,9 +2110,6 @@ i {
         opacity: 1;
         transform: translateY(0) scale(1);
     }
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
 
     .js .detail-item:nth-child(1) {
         transition-delay: 0s;
