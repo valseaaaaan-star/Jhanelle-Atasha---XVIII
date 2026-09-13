@@ -2846,21 +2846,19 @@ html.js body {
     font-size: 16px;
     line-height: 1.6;
 }
-
 .book-slot-grid {
-    width: 100%;
-    max-width: 400px;
-    margin-top: 20px;
-    padding-top: 16px;
-    border-top: 1px solid rgba(176,141,87,.25);
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 6px 10px;
-    overflow-y: auto;
+    max-width: none;
+    grid-template-columns: repeat(2, 1fr);
+    max-height: none;
+    overflow-y: visible;
+    gap: 8px 12px;
+}
 }
 
 .js .book-slot-grid {
-    max-height: 44%;
+    max-height: none;
+    overflow-y: visible;
+}
 }
 
 .book-slot {
@@ -2870,6 +2868,7 @@ html.js body {
     padding: 5px 2px;
     border-bottom: 1px dotted rgba(176,141,87,.4);
     text-align: left;
+    min-width: 0;
 }
 
 .book-slot-num {
