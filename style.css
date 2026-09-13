@@ -1632,7 +1632,6 @@ i {
     margin: 60px auto 0;
 }
 
-
 .wishlist-item {
     display: flex;
     align-items: center;
@@ -1640,6 +1639,8 @@ i {
     padding: 18px 24px;
     background: linear-gradient( 165deg, #fffaf3, #f6ebe0 );
     box-shadow: 0 16px 30px rgba(125,85,96,.1), inset 0 0 0 1px rgba(176,141,87,.28);
+    flex: 0 0 auto;
+    max-width: 260px;
 }
 
     .wishlist-item-icon {
