@@ -289,18 +289,18 @@ i {
 
 
 .hero-date {
-    font-size: 17px;
+    font-size: 20px;
+    font-weight: 600;
     font-style: italic;
 }
 
-
 .hero-host {
     margin-top: 10px;
-    font-size: 13px;
+    font-size: 15px;
+    font-weight: 600;
     letter-spacing: 1px;
     opacity: .85;
 }
-
 
 /* countdown */
 
