@@ -2082,7 +2082,7 @@ i {
 .js .dress-inner,
 .js .wishlist-scroll,
 .js .wishlist-item,
-.js .tradition-card.revealed,
+.js .tradition-card,
 .js .wishes-carousel,
 .js .gallery-wrap,
 .js .rsvp,
@@ -2102,11 +2102,14 @@ i {
     .js .dress-inner.revealed,
     .js .wishlist-scroll.revealed,
     .js .wishlist-item.revealed,
-    .js .book-wrap.revealed,
+    .js .tradition-card.revealed,
     .js .wishes-carousel.revealed,
     .js .gallery-wrap.revealed,
     .js .rsvp.revealed,
     .js .final.revealed {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
         opacity: 1;
         transform: translateY(0) scale(1);
     }
