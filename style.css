@@ -323,21 +323,21 @@ i {
     }
 
 
-    .hero-countdown .count-num {
-        display: block;
-        font-size: 30px;
-        font-weight: 400;
-        letter-spacing: 1px;
-        color: var(--gold-light);
-    }
+   .hero-countdown .count-num {
+    display: block;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--gold-light);
+}
 
-
-    .hero-countdown .count-label {
-        display: block;
-        margin-top: 6px;
-        font-size: 8px;
-        letter-spacing: 2px;
-    }
+.hero-countdown .count-label {
+    display: block;
+    margin-top: 6px;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
 
 
 .hero-scroll {
@@ -357,14 +357,16 @@ i {
     background: rgba(255,255,255,.6);
 }
 
-
-.hero-scroll b {
-    font-size: 18px;
-    font-weight: 300;
-    animation: floatArrow 2s infinite ease-in-out;
+.hero-scroll {
+    margin-top: 85px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 3px;
 }
-
-
 /* =========================================
    HERO DECORATIONS
 ========================================= */
