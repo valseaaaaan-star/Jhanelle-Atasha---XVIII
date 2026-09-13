@@ -1638,11 +1638,12 @@ i {
     }
 
     .wishlist-item p {
-        font-size: 15px;
-        font-style: italic;
-        color: var(--rose-dark);
-        opacity: .85;
-    }
+    font-size: 18px;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--rose-dark);
+    opacity: .85;
+}
 
 
 /* =========================================
