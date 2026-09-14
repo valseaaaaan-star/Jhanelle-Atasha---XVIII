@@ -1624,11 +1624,10 @@ i {
 .wishlist-items {
     position: relative;
     z-index: 1;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 22px;
-    max-width: 780px;
+    max-width: 900px;
     margin: 60px auto 0;
 }
 
@@ -1638,16 +1637,28 @@ i {
     gap: 12px;
     padding: 18px 24px;
     background: linear-gradient( 165deg, #fffaf3, #f6ebe0 );
-    box-shadow: 0 16px 30px rgba(125,85,96,.1), inset 0 0 0 1px rgba(176,141,87,.28);
-    flex: 0 0 auto;
-    max-width: 260px;
+    box-shadow: 0 16px 30px rgba(125,85,96,.1), inset 0 0 1px rgba(176,141,87,.28);
 }
+
+.wishlist-item-note {
+    grid-column: 1 / -1;
 
     .wishlist-item-icon {
         font-size: 16px;
         color: var(--gold-dark);
         flex: none;
     }
+}
+
+@media (max-width: 700px) {
+    .wishlist-items {
+        grid-template-columns: 1fr;
+    }
+
+    .wishlist-item {
+        max-width: none;
+    }
+}
 
     .wishlist-item p {
     font-size: 18px;
